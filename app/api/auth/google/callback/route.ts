@@ -40,7 +40,7 @@ export async function GET(request: NextRequest) {
     const clientId = process.env.GOOGLE_CLIENT_ID;
     const clientSecret = process.env.GOOGLE_CLIENT_SECRET;
     const redirectUri = process.env.NODE_ENV === 'production' 
-      ? 'https://jotto.in/api/auth/google/callback'
+      ? 'https://www.jotto.in/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/google/callback';
 
     if (!clientId || !clientSecret) {
@@ -102,7 +102,7 @@ export async function GET(request: NextRequest) {
 
     // 성공 시 프론트엔드로 리다이렉트 (또는 적절한 응답)
     const frontendUrl = process.env.NODE_ENV === 'production' 
-      ? 'https://jotto.in'
+      ? 'https://www.jotto.in'
       : 'http://localhost:3000';
 
     // 백엔드에서 받은 데이터를 쿼리 파라미터로 전달

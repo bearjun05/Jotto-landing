@@ -4,7 +4,7 @@ export async function GET(request: NextRequest) {
   try {
     const clientId = process.env.GOOGLE_CLIENT_ID;
     const redirectUri = process.env.NODE_ENV === 'production' 
-      ? 'https://jotto.in/api/auth/google/callback'
+      ? 'https://www.jotto.in/api/auth/google/callback'
       : 'http://localhost:3000/api/auth/google/callback';
 
     if (!clientId) {
