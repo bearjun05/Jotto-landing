@@ -1,5 +1,20 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { GoogleTokenResponse, BackendOAuthResponse } from '@/types/oauth';
+
+interface GoogleTokenResponse {
+  access_token: string;
+  id_token: string;
+  token_type: string;
+  expires_in: number;
+  refresh_token?: string;
+  scope: string;
+}
+
+interface BackendOAuthResponse {
+  success: boolean;
+  user?: any;
+  error?: string;
+  message?: string;
+}
 
 export async function GET(request: NextRequest) {
   try {
