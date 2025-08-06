@@ -57,6 +57,22 @@ export default function PrivacyPolicy() {
                 <p className="text-slate-700 leading-relaxed">
                   Clerk securely handles all authentication and stores your account data. We do not access or store your passwords.
                 </p>
+
+                <h3 className="text-xl font-medium text-slate-800 mb-3">Accessibility Permission</h3>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  We request Accessibility permission solely to enable the keyboard shortcut for capturing selected text across applications. This permission is only used locally on your device and does not transmit any data externally.
+                </p>
+                <p className="text-slate-700 leading-relaxed mb-4">
+                  <strong>Important:</strong> The Accessibility permission is used exclusively for:
+                </p>
+                <ul className="list-disc list-inside text-slate-700 mb-4 space-y-2">
+                  <li>Detecting the ⌘ + ⇧ + S keyboard shortcut</li>
+                  <li>Capturing selected text when the hotkey is pressed</li>
+                  <li>No other system monitoring or data collection</li>
+                </ul>
+                <p className="text-slate-700 leading-relaxed">
+                  We do not use this permission to monitor your activities, access other applications' data, or collect any information beyond the text you explicitly choose to capture.
+                </p>
               </section>
 
               <section className="mb-8">

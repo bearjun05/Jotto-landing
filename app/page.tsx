@@ -121,7 +121,7 @@ export default function JottoLanding() {
             <div className="text-center">
               <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
                 <img
-                  src="/inbox-to-todo.gif"
+                  src="/organize-later.jpeg"
                   alt="Organizing captured text in Jotto inbox"
                   className="w-full rounded-xl"
                 />
