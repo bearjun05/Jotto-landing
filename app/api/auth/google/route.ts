@@ -20,8 +20,8 @@ export async function GET(request: NextRequest) {
     googleAuthUrl.searchParams.append('redirect_uri', redirectUri);
     googleAuthUrl.searchParams.append('response_type', 'code');
     googleAuthUrl.searchParams.append('scope', 'openid email profile');
-    googleAuthUrl.searchParams.append('access_type', 'offline');
-    googleAuthUrl.searchParams.append('prompt', 'consent');
+    googleAuthUrl.searchParams.append('access_type', 'online');
+    googleAuthUrl.searchParams.append('prompt', 'select_account');
 
     // Google OAuth 페이지로 리다이렉트
     return NextResponse.redirect(googleAuthUrl.toString());
