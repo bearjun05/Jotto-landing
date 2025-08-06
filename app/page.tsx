@@ -1,14 +1,4 @@
-import {
-  ArrowRight,
-  Download,
-  Zap,
-  FolderOpen,
-  Bell,
-  CheckCircle,
-  MessageSquare,
-  Calendar,
-  FileText,
-} from "lucide-react"
+import { ArrowRight, Download, Zap, FolderOpen, Bell, CheckCircle, MessageSquare, Calendar, FileText } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
@@ -304,15 +294,19 @@ export default function JottoLanding() {
               </div>
             </div>
             <div className="text-center md:text-right">
-              <div className="text-sm text-slate-600">Developer: Ungjun Choe</div>
-              <div className="text-sm text-slate-500">Contact: bearjun05@naver.com</div>
+              <div className="text-sm text-slate-600">Contact: contact@jotto.in</div>
+              <div className="text-sm text-slate-500">macOS productivity tool</div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-sm text-slate-500">
-              © 2024 Jotto. All rights reserved. •
+              © 2025 Jotto. All rights reserved. •
               <a href="/privacy" className="hover:text-slate-700 ml-1">
                 Privacy Policy
+              </a>
+              {" • "}
+              <a href="/terms" className="hover:text-slate-700">
+                Terms of Service
               </a>
             </p>
           </div>
