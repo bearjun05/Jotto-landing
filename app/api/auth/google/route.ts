@@ -15,13 +15,13 @@ export async function GET(request: NextRequest) {
     }
 
     // Google OAuth URL 생성
-    const googleAuthUrl = new URL('https://accounts.google.com/oauth/authorize');
+    const googleAuthUrl = new URL('https://accounts.google.com/o/oauth2/v2/auth');
     googleAuthUrl.searchParams.append('client_id', clientId);
     googleAuthUrl.searchParams.append('redirect_uri', redirectUri);
     googleAuthUrl.searchParams.append('response_type', 'code');
-    googleAuthUrl.searchParams.append('scope', 'openid email profile');
-    googleAuthUrl.searchParams.append('access_type', 'online');
-    googleAuthUrl.searchParams.append('prompt', 'select_account');
+    googleAuthUrl.searchParams.append('scope', 'openid email profile https://www.googleapis.com/auth/calendar');
+    googleAuthUrl.searchParams.append('access_type', 'offline');
+    googleAuthUrl.searchParams.append('prompt', 'consent');
 
     // Google OAuth 페이지로 리다이렉트
     return NextResponse.redirect(googleAuthUrl.toString());
