@@ -25,7 +25,7 @@
         length="FILE_SIZE_PLACEHOLDER"
         type="application/octet-stream"/>
       <sparkle:version>100</sparkle:version>
-      <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
+      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
     </item>
     
   </channel>
