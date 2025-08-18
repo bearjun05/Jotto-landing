@@ -9,13 +9,13 @@
     <!-- 최신 버전 정보 (빌드 후 업데이트 필요) -->
     
     <item>
-    <title>Version 1.5.2</title>
-    <sparkle:version>1.5.2</sparkle:version>
-    <sparkle:shortVersionString>1.5.2</sparkle:shortVersionString>
-    <sparkle:releaseNotesLink>https://github.com/bearjun05/jotto-release/releases/tag/v1.5.2</sparkle:releaseNotesLink>
+    <title>Version 1.5.3</title>
+    <sparkle:version>1.5.3</sparkle:version>
+    <sparkle:shortVersionString>1.5.3</sparkle:shortVersionString>
+    <sparkle:releaseNotesLink>https://github.com/bearjun05/jotto-release/releases/tag/v1.5.3</sparkle:releaseNotesLink>
     <pubDate>Mon, 17 Aug 2025 19:30:00 +0000</pubDate>
-    <enclosure url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.5.2/jotto.zip"
-               sparkle:version="1.5.2"
+    <enclosure url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.5.3/jotto.zip"
+               sparkle:version="1.5.3"
                sparkle:os="macos"
                type="application/zip"/>
 </item>
