@@ -7,26 +7,19 @@
     <language>ko</language>
     
     <!-- 최신 버전 정보 (빌드 후 업데이트 필요) -->
+    
     <item>
-      <title>Version 1.1.2</title>
-      <description><![CDATA[
-        <h2>새로운 기능</h2>
-        <ul>
-          <li>자동 업데이트 기능 추가</li>
-          <li>성능 개선 및 버그 수정</li>
-        </ul>
-      ]]></description>
-      <sparkle:releaseNotesLink>https://github.com/YOUR_USERNAME/jotto/releases/tag/v1.0.0</sparkle:releaseNotesLink>
-      <pubDate>Tue, 13 Aug 2025 15:00:00 +0900</pubDate>
-      <enclosure
-        url="https://github.com/YOUR_USERNAME/jotto/releases/download/v1.0.0/jotto.zip"
-        sparkle:edSignature="SIGNATURE_PLACEHOLDER"
-        sparkle:minimumSystemVersion="13.0"
-        length="FILE_SIZE_PLACEHOLDER"
-        type="application/octet-stream"/>
-      <sparkle:version>100</sparkle:version>
-      <sparkle:shortVersionString>1.1.2</sparkle:shortVersionString>
-    </item>
+    <title>Version 1.5.0</title>
+    <sparkle:version>1.5.0</sparkle:version>
+    <sparkle:shortVersionString>1.5.0</sparkle:shortVersionString>
+    <sparkle:releaseNotesLink>https://github.com/bearjun05/jotto-release/releases/tag/v1.5.0</sparkle:releaseNotesLink>
+    <pubDate>Mon, 17 Aug 2025 19:30:00 +0000</pubDate>
+    <enclosure url="https://github.com/bearjun05/jotto-release/releases/download/v1.5.0/jotto.zip"
+               sparkle:version="1.5.0"
+               sparkle:os="macos"
+               length="15933440"
+               type="application/zip"/>
+</item>
     
   </channel>
 </rss>
