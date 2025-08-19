@@ -7,14 +7,14 @@
     <language>ko</language>
     
     <item>
-      <title>Version 1.6.0</title>
+      <title>Version 1.6.1</title>
       <pubDate>Mon, 19 Aug 2025 12:00:00 +0000</pubDate>
-      <enclosure url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.6.0/jotto.zip"
-                 sparkle:version="160"
-                 sparkle:shortVersionString="1.6.0"
+      <enclosure url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.6.1/jotto.zip"
+                 sparkle:version="161"
+                 sparkle:shortVersionString="1.6.1"
                  type="application/octet-stream"/>
-      <sparkle:version>160</sparkle:version>
-      <sparkle:shortVersionString>1.6.0</sparkle:shortVersionString>
+      <sparkle:version>161</sparkle:version>
+      <sparkle:shortVersionString>1.6.1</sparkle:shortVersionString>
     </item>
     
   </channel>
