@@ -19,3 +19,15 @@
     
   </channel>
 </rss>
+
+<!-- 
+<item>
+  <title>Version 1.7.2</title>
+  <sparkle:version>172</sparkle:version>
+  <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
+  <sparkle:critical>true</sparkle:critical> 
+  <sparkle:releaseNotes><![CDATA[
+    중요한 보안 업데이트가 포함되어 있습니다. 이 업데이트는 필수입니다.
+  ]]></sparkle:releaseNotes>
+</item>
+-->
