@@ -10,7 +10,7 @@
       <title>Version 1.7.2</title>
       <pubDate>Mon, 19 Aug 2025 12:00:00 +0000</pubDate>
       
-      <!-- 필수: enclosure 태그 - 업데이트 파일 다운로드 정보 -->
+      <!-- 자동 업데이트용: ZIP 파일 -->
       <enclosure 
         url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.7.2/jotto.zip"
         sparkle:version="172"
@@ -18,34 +18,23 @@
         type="application/zip"
         length="0"/>
       
-      <!-- Sparkle 버전 정보 (enclosure와 동일하게) -->
+      <!-- 랜딩페이지용: DMG 파일 (두 번째 enclosure) -->
+      <enclosure 
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.7.2/jotto.dmg"
+        type="application/x-apple-diskimage"
+        length="0"/>
+      
+      <!-- Sparkle 버전 정보 -->
       <sparkle:version>172</sparkle:version>
       <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
       
-      <!-- 강제 업데이트 플래그 (필요시 주석 해제) -->
-      <!-- <sparkle:critical>true</sparkle:critical> -->
-      
-      <!-- 일반 업데이트 릴리즈 노트 -->
+      <!-- 릴리즈 노트 -->
       <sparkle:releaseNotes><![CDATA[
         • 성능 개선 및 안정성 향상
         • 사용자 인터페이스 개선
         • 버그 수정 및 최적화
         • 새로운 기능 추가
-      ]]></sparkle:releaseNotes>
-      
-      <!-- 강제 업데이트용 릴리즈 노트 (강제 업데이트 시 위 내용과 교체) -->
-      <!--
-      <sparkle:releaseNotes><![CDATA[
-        🚨 필수 보안 업데이트
-        
-        중요한 보안 업데이트가 포함되어 있습니다. 
-        이 업데이트는 필수입니다.
-        
-        • 보안 취약점 수정
-        • 중요한 버그 수정
-        • 시스템 안정성 향상
-      ]]></sparkle:releaseNotes>
-      -->
+      ]]></spashle:releaseNotes>
     </item>
     
   </channel>
