@@ -149,7 +149,7 @@ export default function TermsOfService() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
-            <p className="text-sm text-slate-500">© 2025 Jotto. 모든 권리 보유.</p>
+            <p className="text-sm text-slate-500">© 2025 Jotto. All rights reserved.</p>
           </div>
         </div>
       </footer>

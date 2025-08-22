@@ -95,8 +95,8 @@ export default function JottoLanding() {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
                 <video className="w-full max-w-2xl rounded-xl shadow-lg" autoPlay loop muted playsInline preload="auto">
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero-Bew22be2pMAHuZx5O3KlTkv6DoFFbO.mp4" type="video/mp4" />
-                  브라우저가 비디오를 지원하지 않습니다.
+                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero1-Yje0Vk1QhaIWuqEnnqdRP5kkkNffeG.mp4" type="video/mp4" />
+                  {"브라우저가 비디오를 지원하지 않습니다."}
                 </video>
               </div>
             </div>
@@ -161,7 +161,7 @@ export default function JottoLanding() {
                           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-everywhere-edit-bqBaYl0uUA3DcRaUuARDImRoJyQ70o.mp4"
                           type="video/mp4"
                         />
-                        브라우저가 비디오를 지원하지 않습니다.
+                        {"브라우저가 비디오를 지원하지 않습니다."}
                       </video>
                     </div>
                   </div>
@@ -217,7 +217,7 @@ export default function JottoLanding() {
                           src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-draginjotto-edit-eFpJ8nR3KxsUs0XXF97J5YFpTRffOE.mp4"
                           type="video/mp4"
                         />
-                        브라우저가 비디오를 지원하지 않습니다.
+                        {"브라우저가 비디오를 지원하지 않습니다."}
                       </video>
                     </div>
                   </div>
@@ -260,7 +260,7 @@ export default function JottoLanding() {
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. 모든 권리 보유. • 문의: contact@jotto.in •
+              © 2025 Jotto. All rights reserved. • 문의: contact@jotto.in •
               <a href="/privacy" className="hover:text-slate-700 ml-1">
                 개인정보처리방침
               </a>
