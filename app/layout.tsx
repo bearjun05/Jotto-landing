@@ -95,14 +95,19 @@ export default function RootLayout({
 }) {
   return (
     <>
-      {/* Google Analytics */}
-      <Script src="https://www.googletagmanager.com/gtag/js?id=G-QLXF3L16ME" strategy="afterInteractive" />
-      <Script id="google-analytics" strategy="afterInteractive">
+      {/* Google Analytics - 완전히 새로운 접근법 */}
+      <Script src="https://www.googletagmanager.com/gtag/js?id=G-QLXF3L16ME" strategy="beforeInteractive" />
+      <Script id="google-analytics-init" strategy="beforeInteractive">
         {`
           window.dataLayer = window.dataLayer || [];
           function gtag(){dataLayer.push(arguments);}
+          window.gtag = gtag;
           gtag('js', new Date());
-          gtag('config', 'G-QLXF3L16ME');
+          gtag('config', 'G-QLXF3L16ME', {
+            page_title: document.title,
+            page_location: window.location.href
+          });
+          console.log('🎯 GA4 LOADED - gtag available:', typeof gtag);
         `}
       </Script>
       <Client>{children}</Client>

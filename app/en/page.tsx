@@ -4,8 +4,85 @@ import { Download, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { track } from "@vercel/analytics"
+import { useEffect } from "react"
+
+// GA4 전역 타입 선언
+declare global {
+  interface Window {
+    gtag: (...args: any[]) => void
+    dataLayer: any[]
+  }
+}
 
 export default function JottoLandingEN() {
+  // 컴포넌트 마운트 시 GA4 상태 확인
+  useEffect(() => {
+    const checkGA4Status = () => {
+      console.log("🔍 GA4 Final Status (EN):")
+      console.log("- window.gtag:", typeof window.gtag)
+      console.log("- window.dataLayer:", Array.isArray(window.dataLayer))
+
+      if (window.gtag) {
+        window.gtag("event", "page_loaded_test_en", {
+          event_category: "test",
+          event_label: "page_load_en",
+        })
+        console.log("✅ Test GA4 event sent (EN)")
+      }
+    }
+
+    setTimeout(checkGA4Status, 3000)
+  }, [])
+
+  // 새로운 GA4 이벤트 전송 함수
+  const sendGA4Event = (eventName: string, parameters: any = {}) => {
+    console.log(`🎯 GA4 Event (EN): ${eventName}`)
+
+    if (typeof window !== "undefined" && window.gtag) {
+      try {
+        window.gtag("event", eventName, {
+          ...parameters,
+          send_to: "G-QLXF3L16ME",
+        })
+        console.log(`✅ GA4 SUCCESS (EN): ${eventName}`, parameters)
+      } catch (error) {
+        console.error(`❌ GA4 ERROR (EN): ${eventName}`, error)
+      }
+    } else {
+      console.warn(`❌ GA4 NOT READY (EN): ${eventName}`)
+    }
+  }
+
+  const handleMacDownload = () => {
+    console.log("🖱️ Mac download button clicked (EN)")
+
+    // Vercel Analytics
+    track("download_mac_hero_en")
+    console.log("📊 Vercel Analytics: download_mac_hero_en")
+
+    // GA4
+    sendGA4Event("download_click", {
+      event_category: "download",
+      event_label: "mac_hero_en",
+      value: 1,
+    })
+  }
+
+  const handleWindowsWaitlist = () => {
+    console.log("🖱️ Windows waitlist button clicked (EN)")
+
+    // Vercel Analytics
+    track("join_windows_waitlist_en")
+    console.log("📊 Vercel Analytics: join_windows_waitlist_en")
+
+    // GA4
+    sendGA4Event("waitlist_join", {
+      event_category: "waitlist",
+      event_label: "windows_hero_en",
+      value: 1,
+    })
+  }
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       {/* Header */}
@@ -22,7 +99,7 @@ export default function JottoLandingEN() {
               <Link href="/" className="text-sm text-slate-600 hover:text-slate-900">
                 한국어
               </Link>
-              <a href="/api/download" onClick={() => track("download_mac_header_en")}>
+              <a href="/api/download" onClick={handleMacDownload}>
                 <Button className="bg-slate-900 hover:bg-slate-800 text-white">
                   <Download className="w-4 h-4 mr-2" />
                   Download
@@ -61,12 +138,12 @@ export default function JottoLandingEN() {
 
           {/* Download Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="/api/download" onClick={() => track("download_mac_hero_en")}>
+            <a href="/api/download" onClick={handleMacDownload}>
               <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-slate-900">
                 <div className="flex items-center gap-2.5">
                   <div className="w-5 h-5 flex items-center justify-center">
                     <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.81.87.78 0 2.26-1.07 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
                     </svg>
                   </div>
                   <div className="text-left">
@@ -80,7 +157,7 @@ export default function JottoLandingEN() {
               href="https://tally.so/r/mY6BJJ"
               target="_blank"
               rel="noopener noreferrer"
-              onClick={() => track("join_windows_waitlist_en")}
+              onClick={handleWindowsWaitlist}
             >
               <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white">
                 <div className="flex items-center gap-2.5">
@@ -247,7 +324,23 @@ export default function JottoLandingEN() {
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
             Join thousands of users who are already getting smarter with Jotto.
           </p>
-          <a href="/api/download" onClick={() => track("download_mac_cta_en")}>
+          <a
+            href="/api/download"
+            onClick={() => {
+              console.log("🖱️ Mac download CTA button clicked (EN)")
+
+              // Vercel Analytics
+              track("download_mac_cta_en")
+              console.log("📊 Vercel Analytics: download_mac_cta_en")
+
+              // GA4
+              sendGA4Event("download_click", {
+                event_category: "download",
+                event_label: "mac_cta_en",
+                value: 1,
+              })
+            }}
+          >
             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
               <Download className="w-5 h-5 mr-2" />
               Download Jotto
