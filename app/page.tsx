@@ -1,6 +1,9 @@
+"use client"
+
 import { Download, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
+import { track } from "@vercel/analytics"
 
 export default function JottoLanding() {
   return (
@@ -19,7 +22,7 @@ export default function JottoLanding() {
               <Link href="/en" className="text-sm text-slate-600 hover:text-slate-900">
                 English
               </Link>
-              <a href="/api/download">
+              <a href="/api/download" onClick={() => track("download_mac_hero")}>
                 <Button className="bg-slate-900 hover:bg-slate-800 text-white">
                   <Download className="w-4 h-4 mr-2" />
                   다운로드
@@ -58,7 +61,7 @@ export default function JottoLanding() {
 
           {/* Download Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="/api/download">
+            <a href="/api/download" onClick={() => track("download_mac_hero")}>
               <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-slate-900">
                 <div className="flex items-center gap-2.5">
                   <div className="w-5 h-5 flex items-center justify-center">
@@ -73,7 +76,12 @@ export default function JottoLanding() {
               </button>
             </a>
 
-            <a href="https://tally.so/r/mY6BJJ" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://tally.so/r/mY6BJJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track("join_windows_waitlist")}
+            >
               <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white">
                 <div className="flex items-center gap-2.5">
                   <div className="w-5 h-5 flex items-center justify-center">
@@ -95,7 +103,10 @@ export default function JottoLanding() {
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
                 <video className="w-full max-w-2xl rounded-xl shadow-lg" autoPlay loop muted playsInline preload="auto">
-                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero1-Yje0Vk1QhaIWuqEnnqdRP5kkkNffeG.mp4" type="video/mp4" />
+                  <source
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero1-Yje0Vk1QhaIWuqEnnqdRP5kkkNffeG.mp4"
+                    type="video/mp4"
+                  />
                   {"브라우저가 비디오를 지원하지 않습니다."}
                 </video>
               </div>
@@ -235,7 +246,7 @@ export default function JottoLanding() {
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
             이미 Jotto로 똑똑해지고 있는 수많은 사용자들과 함께하세요.
           </p>
-          <a href="/api/download">
+          <a href="/api/download" onClick={() => track("download_mac_cta")}>
             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
               <Download className="w-5 h-5 mr-2" />
               Jotto 다운로드

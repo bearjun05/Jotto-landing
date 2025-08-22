@@ -1,3 +1,5 @@
+"use client"
+
 import {
   ArrowRight,
   Download,
@@ -13,6 +15,7 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
+import { track } from "@vercel/analytics"
 
 export default function JottoLandingEN() {
   return (
@@ -63,7 +66,7 @@ export default function JottoLandingEN() {
             Jotto saves your text instantly so you can stay focused and organize later.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-            <a href="/api/download">
+            <a href="/api/download" onClick={() => track("download_mac_hero_en")}>
               <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
                 <Download className="w-5 h-5 mr-2" />
                 Download Jotto
@@ -156,7 +159,7 @@ export default function JottoLandingEN() {
           </div>
 
           <div className="text-center mt-12">
-            <a href="/api/download">
+            <a href="/api/download" onClick={() => track("download_mac_demo_en")}>
               <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
                 <Download className="w-5 h-5 mr-2" />
                 Try Jotto Now
@@ -296,7 +299,7 @@ export default function JottoLandingEN() {
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
             Join thousands of users who have already streamlined their workflow with Jotto.
           </p>
-          <a href="/api/download">
+          <a href="/api/download" onClick={() => track("download_mac_cta_en")}>
             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
               <Download className="w-5 h-5 mr-2" />
               Download Jotto
