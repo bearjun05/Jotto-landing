@@ -5,8 +5,20 @@
     <link>https://www.jotto.in/appcast.xml</link>
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
-
-   type="application/octet-stream"/>
+    
+    <item>
+      <title>Version 1.7.2</title>
+      <pubDate>Mon, 19 Aug 2025 12:00:00 +0000</pubDate>
+      
+      <!-- 필수: enclosure 태그 - 업데이트 파일 다운로드 정보 -->
+      <enclosure 
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.7.2/jotto.zip"
+        sparkle:version="172"
+        sparkle:shortVersionString="1.7.2"
+        type="application/zip"
+        length="0"/>
+      
+      <!-- Sparkle 버전 정보 (enclosure와 동일하게) -->
       <sparkle:version>172</sparkle:version>
       <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
       
@@ -35,6 +47,6 @@
       ]]></sparkle:releaseNotes>
       -->
     </item>
-
+    
   </channel>
 </rss>
