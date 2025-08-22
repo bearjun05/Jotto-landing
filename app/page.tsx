@@ -89,16 +89,15 @@ export default function JottoLanding() {
             </a>
           </div>
 
-          {/* Hero GIF */}
+          {/* Hero Video */}
           <div className="mb-6 flex justify-center">
             <div className="relative group">
               <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
               <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
-                <img
-                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero-TW9shpjZhOtpkUKjgxt7lDLO2lB88T.gif"
-                  alt="Slack에서 Jotto 사용하기"
-                  className="w-full max-w-2xl rounded-xl shadow-lg"
-                />
+                <video className="w-full max-w-2xl rounded-xl shadow-lg" autoPlay loop muted playsInline preload="auto">
+                  <source src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero-Bew22be2pMAHuZx5O3KlTkv6DoFFbO.mp4" type="video/mp4" />
+                  브라우저가 비디오를 지원하지 않습니다.
+                </video>
               </div>
             </div>
           </div>
