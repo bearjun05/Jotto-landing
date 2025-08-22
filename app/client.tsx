@@ -3,19 +3,12 @@
 import type React from "react"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
-import { useSearchParams } from "next/navigation"
 import { Suspense } from "react"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
-  const searchParams = useSearchParams()
-
+function ClientContent({ children }: { children: React.ReactNode }) {
   return (
     <html lang="ko">
       <head>
@@ -26,9 +19,21 @@ export default function RootLayout({
         <link rel="mask-icon" href="/safari-pinned-tab.png" color="#000000" />
       </head>
       <body className={inter.className}>
-        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        {children}
         <Analytics />
       </body>
     </html>
+  )
+}
+
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <ClientContent>{children}</ClientContent>
+    </Suspense>
   )
 }

@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata } from "next"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
-import { Suspense } from "next/navigation"
+import { Suspense } from "react"
 import "../globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -103,10 +103,8 @@ export default function EnLayout({
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
       <body className={inter.className}>
-        <Suspense fallback={<div>Loading...</div>}>
-          {children}
-          <Analytics />
-        </Suspense>
+        <Suspense fallback={<div>Loading...</div>}>{children}</Suspense>
+        <Analytics />
       </body>
     </html>
   )
