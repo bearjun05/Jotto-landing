@@ -1,19 +1,7 @@
 "use client"
 
-import {
-  ArrowRight,
-  Download,
-  Zap,
-  FolderOpen,
-  Bell,
-  CheckCircle,
-  MessageSquare,
-  Calendar,
-  FileText,
-} from "lucide-react"
+import { Download, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 import { track } from "@vercel/analytics"
 
@@ -34,7 +22,7 @@ export default function JottoLandingEN() {
               <Link href="/" className="text-sm text-slate-600 hover:text-slate-900">
                 한국어
               </Link>
-              <a href="/api/download">
+              <a href="/api/download" onClick={() => track("download_mac_header_en")}>
                 <Button className="bg-slate-900 hover:bg-slate-800 text-white">
                   <Download className="w-4 h-4 mr-2" />
                   Download
@@ -46,13 +34,18 @@ export default function JottoLandingEN() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          {/* 이 부분을 제거 */}
-          {/* <Badge variant="secondary" className="mb-6 bg-blue-50 text-blue-700 border-blue-200">
-            <img src="/jotto-icon.png" alt="Jotto" className="w-4 h-4 mr-1 inline" />
-            Jotto for Mac
-          </Badge> */}
+      <section className="relative py-20 px-6 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          </div>
+        </div>
+
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             Clear your mind,
             <br />
@@ -61,232 +54,187 @@ export default function JottoLandingEN() {
             </span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Just drag and press <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd>.
+            Just press one shortcut anywhere in Slack, Chrome, or Notion
             <br />
-            Jotto saves your text instantly so you can stay focused and organize later.
+            From scheduling to memo organization becomes easy and convenient
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+          {/* Download Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a href="/api/download" onClick={() => track("download_mac_hero_en")}>
-              <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
-                <Download className="w-5 h-5 mr-2" />
-                Download Jotto
-              </Button>
+              <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-slate-900">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-medium text-white">Download for Mac</div>
+                  </div>
+                </div>
+              </button>
             </a>
-            <Button variant="outline" size="lg" className="px-8 py-3 bg-transparent">
-              Watch Demo
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+
+            <a
+              href="https://tally.so/r/mY6BJJ"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => track("join_windows_waitlist_en")}
+            >
+              <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-slate-800">
+                      <path d="M0 0h11v11H0zm13 0h11v11H13zM0 13h11v11H0zm13 0h11v11H13z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-medium text-slate-800">Join Windows waitlist</div>
+                  </div>
+                </div>
+              </button>
+            </a>
           </div>
+
+          {/* Hero Video */}
+          <div className="mb-6 flex justify-center">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
+                <video className="w-full max-w-2xl rounded-xl shadow-lg" autoPlay loop muted playsInline preload="auto">
+                  <source
+                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero1-Yje0Vk1QhaIWuqEnnqdRP5kkkNffeG.mp4"
+                    type="video/mp4"
+                  />
+                  Your browser does not support the video tag.
+                </video>
+              </div>
+            </div>
+          </div>
+
+          <div className="text-sm text-slate-500">macOS 12+ | Free Download</div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">How It Works</h2>
-            <p className="text-lg text-slate-600">Three simple steps to capture anything, anywhere</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl">1</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Select (drag) any text</h3>
-              <p className="text-slate-600">
-                Works in Slack, Discord, Chrome, Notion—any app that lets you select text
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Press ⌘ + ⇧ + S</h3>
-              <p className="text-slate-600">Just hit the hotkey to save instantly—no popups or distractions</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Organize later</h3>
-              <p className="text-slate-600">Open Jotto to sort everything into To-dos, Calendar events, or Memos</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="py-24 px-6 bg-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/30 to-white"></div>
 
-      {/* Demo Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">See Jotto in Action</h2>
-            <p className="text-lg text-slate-600">Watch how seamlessly you can capture and organize your thoughts</p>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Simple Workflow</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              Save and organize in just two steps, no complex setup required
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Capture Demo */}
-            <div className="text-center">
-              <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-                <img
-                  src="/merged-document.gif"
-                  alt="Capturing text from Slack with Jotto"
-                  className="w-full rounded-xl"
-                />
+          <div className="space-y-32">
+            {/* Step 1 */}
+            <div className="relative">
+              {/* Step indicator */}
+              <div className="flex items-center justify-center mb-12">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="text-sm font-medium text-blue-600 uppercase tracking-wider">Step 01</div>
+                  <div className="w-16 h-px bg-gradient-to-r from-blue-500 to-transparent"></div>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">1. Capture from Anywhere</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Select any text in Slack, Discord, Chrome, or any app. Press{" "}
-                <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd> and it's instantly
-                saved to your Jotto inbox.
-              </p>
-            </div>
 
-            {/* Organize Demo */}
-            <div className="text-center">
-              <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-                <img
-                  src="/organize-later.jpeg"
-                  alt="Organizing captured text in Jotto inbox"
-                  className="w-full rounded-xl"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">2. Organize Later</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Open Jotto to see all your captured content. Easily sort items into To-dos, Calendar events, or Memos
-                with just a click.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <a href="/api/download" onClick={() => track("download_mac_demo_en")}>
-              <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
-                <Download className="w-5 h-5 mr-2" />
-                Try Jotto Now
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Features */}
-      <section className="py-16 px-6 bg-slate-50">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Key Features</h2>
-            <p className="text-lg text-slate-600">Everything you need to capture and organize your thoughts</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-sm bg-white">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Save text from anywhere</h3>
-                    <p className="text-slate-600 mb-4">
-                      Works in Slack, Discord, Chrome, Notion—any app that lets you select text. Just drag and hit the
-                      hotkey to save.
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="lg:order-1">
+                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                    Drag anywhere
+                    <br />
+                    <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      you want
+                    </span>
+                  </h3>
+                  <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+                    <p>
+                      From Slack, Discord, Chrome, anywhere you want
+                      <br />
+                      Just drag and press the shortcut once to save conversations or text as is.
                     </p>
-                    <div className="flex gap-2 flex-wrap">
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <MessageSquare className="w-3 h-3 mr-1" />
-                        Slack
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        Discord
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        Chrome
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        Notion
-                      </Badge>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full">
+                      <span className="text-blue-700 font-semibold">Clear your mind and leave memories to Jotto</span>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            <Card className="border-0 shadow-sm bg-white">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <FolderOpen className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Organize later, stress-free</h3>
-                    <p className="text-slate-600 mb-4">
-                      All captured text is stored and accessible in the app. Easily sort into To-dos, Calendar events,
-                      or Memos.
-                    </p>
-                    <div className="flex gap-2 flex-wrap">
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <CheckCircle className="w-3 h-3 mr-1" />
-                        To-dos
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        Calendar
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <FileText className="w-3 h-3 mr-1" />
-                        Memos
-                      </Badge>
+                <div className="lg:order-2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                    <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
+                      <video className="w-full rounded-xl shadow-lg" autoPlay loop muted playsInline>
+                        <source
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-everywhere-edit-bqBaYl0uUA3DcRaUuARDImRoJyQ70o.mp4"
+                          type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                      </video>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-0 shadow-sm bg-white md:col-span-2">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Bell className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Capture without interruption</h3>
-                    <p className="text-slate-600">
-                      No popups or distractions—just a silent save. Your focus stays uninterrupted while everything gets
-                      captured seamlessly in the background.
+            {/* Connection line */}
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center gap-4">
+                <ArrowDown className="w-6 h-6 text-slate-400 animate-bounce" />
+                <div className="w-px h-16 bg-gradient-to-b from-slate-300 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              {/* Step indicator */}
+              <div className="flex items-center justify-center mb-12">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <div className="text-sm font-medium text-purple-600 uppercase tracking-wider">Step 02</div>
+                  <div className="w-16 h-px bg-gradient-to-r from-purple-500 to-transparent"></div>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="lg:order-2">
+                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                    When you have time
+                    <br />
+                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                      organize it
+                    </span>
+                  </h3>
+                  <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+                    <p>
+                      Look at the saved context and organize into To-dos, Calendar, and Memos
+                      <br />
+                      all at once
                     </p>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                      <span className="text-purple-700 font-semibold">Fast, easy, and convenient</span>
+                    </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
-      {/* FAQ */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
-          </div>
-          <div className="space-y-8">
-            <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Does it work in every app?</h3>
-              <p className="text-slate-600">
-                Yes! As long as you can select text, Jotto will work. We've tested it across hundreds of applications
-                including web browsers, messaging apps, document editors, and more.
-              </p>
-            </div>
-            <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">Where do saved texts go?</h3>
-              <p className="text-slate-600">
-                Open the Jotto app to see a list of everything you've captured. All your saved text is stored locally
-                and organized chronologically, making it easy to find what you need.
-              </p>
-            </div>
-            <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">How do I organize saved items?</h3>
-              <p className="text-slate-600">
-                Simply click on any saved text and assign it as a To-do, Calendar event, or Memo. You can also add tags,
-                set due dates, and create custom categories to keep everything organized.
-              </p>
+                <div className="lg:order-1">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                    <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
+                      <video className="w-full rounded-xl shadow-lg" autoPlay loop muted playsInline>
+                        <source
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-draginjotto-edit-eFpJ8nR3KxsUs0XXF97J5YFpTRffOE.mp4"
+                          type="video/mp4"
+                        />
+                        Your browser does not support the video tag.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -297,7 +245,7 @@ export default function JottoLandingEN() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold text-white mb-6">Ready to clear your mind?</h2>
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of users who have already streamlined their workflow with Jotto.
+            Join thousands of users who are already getting smarter with Jotto.
           </p>
           <a href="/api/download" onClick={() => track("download_mac_cta_en")}>
             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
@@ -311,24 +259,20 @@ export default function JottoLandingEN() {
       {/* Footer */}
       <footer className="py-12 px-6 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto max-w-5xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg overflow-hidden">
                 <img src="/jotto-icon.png" alt="Jotto" className="w-full h-full object-cover" />
               </div>
               <div>
                 <div className="font-semibold text-slate-900">Jotto</div>
-                <div className="text-sm text-slate-600">Version 1.0</div>
+                <div className="text-sm text-slate-600">macOS productivity tool</div>
               </div>
-            </div>
-            <div className="text-center md:text-right">
-              <div className="text-sm text-slate-600">Contact: contact@jotto.in</div>
-              <div className="text-sm text-slate-500">macOS productivity tool</div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. All rights reserved. •
+              © 2025 Jotto. All rights reserved. • Contact: contact@jotto.in •
               <a href="/en/privacy" className="hover:text-slate-700 ml-1">
                 Privacy Policy
               </a>

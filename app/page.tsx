@@ -61,7 +61,7 @@ export default function JottoLanding() {
 
           {/* Download Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="/api/download" onClick={() => track("download_mac_hero")}>
+            <a href="/api/download" onClick={() => track("download_mac_demo")}>
               <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-slate-900">
                 <div className="flex items-center gap-2.5">
                   <div className="w-5 h-5 flex items-center justify-center">

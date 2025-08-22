@@ -1,6 +1,7 @@
 import type React from "react"
 import type { Metadata } from "next"
 import Client from "./client"
+import "./globals.css"
 
 export const metadata: Metadata = {
   title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
@@ -93,6 +94,3 @@ export default function RootLayout({
 }) {
   return <Client>{children}</Client>
 }
-
-
-import './globals.css'

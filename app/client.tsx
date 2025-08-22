@@ -3,7 +3,8 @@
 import type React from "react"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
-import { useSearchParams, Suspense } from "next/navigation"
+import { useSearchParams } from "next/navigation"
+import { Suspense } from "react"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
