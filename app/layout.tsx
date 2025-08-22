@@ -1,16 +1,29 @@
 import type React from "react"
 import type { Metadata } from "next"
-import { GeistSans } from "geist/font/sans"
-import { GeistMono } from "geist/font/mono"
+import { Inter } from "next/font/google"
 import "./globals.css"
+
+const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
   title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
-  description: "빠르고 간단한 메모 앱 Jotto로 언제든지 떠오르는 생각을 저장하세요. macOS용 무료 다운로드.",
-  keywords: ["메모앱", "macOS", "생산성", "노트", "빠른메모", "Jotto"],
-  authors: [{ name: "Jotto Team" }],
-  creator: "Jotto Team",
-  publisher: "Jotto Team",
+  description: "Slack·Chrome·Notion 어디에서든 단축키 하나만 누르세요. 일정부터 메모 정리가 쉽고 편리해집니다.",
+  keywords: [
+    "Jotto",
+    "생산성",
+    "메모",
+    "텍스트 캡처",
+    "macOS",
+    "단축키",
+    "할 일",
+    "캘린더",
+    "Slack",
+    "Chrome",
+    "Notion",
+  ],
+  authors: [{ name: "Jotto" }],
+  creator: "Jotto",
+  publisher: "Jotto",
   formatDetection: {
     email: false,
     address: false,
@@ -26,7 +39,7 @@ export const metadata: Metadata = {
   },
   openGraph: {
     title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
-    description: "빠르고 간단한 메모 앱 Jotto로 언제든지 떠오르는 생각을 저장하세요.",
+    description: "Slack·Chrome·Notion 어디에서든 단축키 하나만 누르세요. 일정부터 메모 정리가 쉽고 편리해집니다.",
     url: "https://jotto.in",
     siteName: "Jotto",
     locale: "ko_KR",
@@ -36,24 +49,40 @@ export const metadata: Metadata = {
         url: "/jotto-icon.png",
         width: 1200,
         height: 630,
-        alt: "Jotto - 빠른 메모 앱",
+        alt: "Jotto - 생각을 저장하는 가장 쉬운 방법",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
-    description: "빠르고 간단한 메모 앱 Jotto로 언제든지 떠오르는 생각을 저장하세요.",
+    description: "Slack·Chrome·Notion 어디에서든 단축키 하나만 누르세요. 일정부터 메모 정리가 쉽고 편리해집니다.",
     images: ["/jotto-icon.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
   },
   icons: {
     icon: [
       { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
       { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
-      { url: "/favicon.ico", sizes: "any" },
     ],
     apple: [{ url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" }],
-    other: [{ rel: "mask-icon", url: "/safari-pinned-tab.png", color: "#000000" }],
+    other: [
+      {
+        rel: "mask-icon",
+        url: "/safari-pinned-tab.png",
+        color: "#000000",
+      },
+    ],
   },
   manifest: "/site.webmanifest",
     generator: 'v0.app'
@@ -61,21 +90,15 @@ export const metadata: Metadata = {
 
 export default function RootLayout({
   children,
-}: Readonly<{
+}: {
   children: React.ReactNode
-}>) {
+}) {
   return (
     <html lang="ko">
       <head>
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
-}
-        `}</style>
+        <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body>{children}</body>
+      <body className={inter.className}>{children}</body>
     </html>
   )
 }

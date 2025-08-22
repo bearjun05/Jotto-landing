@@ -1,27 +1,33 @@
 import { NextResponse } from "next/server"
-import { readFile } from "fs/promises"
-import { join } from "path"
+import path from "path"
+import fs from "fs"
 
 export async function GET() {
   try {
-    // appcast.xml 파일에서 다운로드 URL 추출
-    const filePath = join(process.cwd(), "public", "appcast.xml")
-    const appcastXml = await readFile(filePath, "utf-8")
+    // Read the appcast.xml file
+    const appcastPath = path.join(process.cwd(), "public", "appcast.xml")
+    const appcastContent = fs.readFileSync(appcastPath, "utf-8")
 
-    // XML에서 enclosure url 추출
-    const urlMatch = appcastXml.match(/enclosure\s+url="([^"]+)"/i)
+    // Parse XML to find enclosure URLs
+    const enclosureRegex = /<enclosure[^>]+url="([^"]+)"/g
+    const matches = []
+    let match
 
-    if (urlMatch && urlMatch[1]) {
-      const downloadUrl = urlMatch[1]
-
-      // 실제 파일로 리다이렉트
-      return NextResponse.redirect(downloadUrl)
-    } else {
-      // URL을 찾을 수 없는 경우 에러 응답
-      return NextResponse.json({ error: "Download URL not found in appcast" }, { status: 404 })
+    while ((match = enclosureRegex.exec(appcastContent)) !== null) {
+      matches.push(match[1])
     }
+
+    // Use the second enclosure if available, otherwise use the first
+    const downloadUrl = matches[1] || matches[0]
+
+    if (!downloadUrl) {
+      return NextResponse.json({ error: "No download URL found in appcast.xml" }, { status: 404 })
+    }
+
+    // Redirect to the download URL
+    return NextResponse.redirect(downloadUrl)
   } catch (error) {
-    console.error("Error reading appcast:", error)
-    return NextResponse.json({ error: "Failed to get download URL" }, { status: 500 })
+    console.error("Error reading appcast.xml:", error)
+    return NextResponse.json({ error: "Failed to read appcast.xml" }, { status: 500 })
   }
 }

@@ -1,17 +1,5 @@
-import {
-  ArrowRight,
-  Download,
-  Zap,
-  FolderOpen,
-  Bell,
-  CheckCircle,
-  MessageSquare,
-  Calendar,
-  FileText,
-} from "lucide-react"
+import { Download, ArrowDown } from "lucide-react"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 
 export default function JottoLanding() {
@@ -43,13 +31,18 @@ export default function JottoLanding() {
       </header>
 
       {/* Hero Section */}
-      <section className="py-20 px-6">
-        <div className="container mx-auto max-w-4xl text-center">
-          {/* 이 부분을 제거 */}
-          {/* <Badge variant="secondary" className="mb-6 bg-blue-50 text-blue-700 border-blue-200">
-            <img src="/jotto-icon.png" alt="Jotto" className="w-4 h-4 mr-1 inline" />
-            Mac용 Jotto
-          </Badge> */}
+      <section className="relative py-20 px-6 overflow-hidden">
+        {/* Animated Background */}
+        <div className="absolute inset-0 -z-10">
+          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
+          <div className="absolute top-0 left-0 w-full h-full">
+            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
+            <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+            <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
+          </div>
+        </div>
+
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
             머릿속을 비우고,
             <br />
@@ -58,227 +51,179 @@ export default function JottoLanding() {
             </span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            텍스트를 드래그하고 <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd>만
-            누르세요.
+            Slack·Chrome·Notion 어디에서든 단축키 하나만 누르세요
             <br />
-            Jotto가 즉시 저장해서 집중력을 유지하고 나중에 정리할 수 있습니다.
+            일정부터 메모 정리가 쉽고 편리해집니다
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
+
+          {/* Download Buttons */}
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
             <a href="/api/download">
-              <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
-                <Download className="w-5 h-5 mr-2" />
-                Mac App Store에서 다운로드
-              </Button>
+              <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-slate-900">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
+                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-medium text-white">Download for Mac</div>
+                  </div>
+                </div>
+              </button>
             </a>
-            <Button variant="outline" size="lg" className="px-8 py-3 bg-transparent">
-              데모 보기
-              <ArrowRight className="w-4 h-4 ml-2" />
-            </Button>
+
+            <a href="https://tally.so/r/mY6BJJ" target="_blank" rel="noopener noreferrer">
+              <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white">
+                <div className="flex items-center gap-2.5">
+                  <div className="w-5 h-5 flex items-center justify-center">
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-slate-800">
+                      <path d="M0 0h11v11H0zm13 0h11v11H13zM0 13h11v11H0zm13 0h11v11H13z" />
+                    </svg>
+                  </div>
+                  <div className="text-left">
+                    <div className="text-sm font-medium text-slate-800">Join Windows waitlist</div>
+                  </div>
+                </div>
+              </button>
+            </a>
           </div>
+
+          {/* Hero GIF */}
+          <div className="mb-6 flex justify-center">
+            <div className="relative group">
+              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
+              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
+                <img
+                  src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero-TW9shpjZhOtpkUKjgxt7lDLO2lB88T.gif"
+                  alt="Slack에서 Jotto 사용하기"
+                  className="w-full max-w-2xl rounded-xl shadow-lg"
+                />
+              </div>
+            </div>
+          </div>
+
+          <div className="text-sm text-slate-500">macOS 12+ | 무료 다운로드</div>
         </div>
       </section>
 
       {/* How It Works */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">사용 방법</h2>
-            <p className="text-lg text-slate-600">어디서든 무엇이든 캡처하는 간단한 3단계</p>
-          </div>
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl">1</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">텍스트 선택 (드래그)</h3>
-              <p className="text-slate-600">
-                Slack, Discord, Chrome, Notion 등 텍스트를 선택할 수 있는 모든 앱에서 작동합니다
-              </p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl">2</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">⌘ + ⇧ + S 누르기</h3>
-              <p className="text-slate-600">단축키만 누르면 즉시 저장—팝업이나 방해 요소 없이</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
-                <span className="text-white text-2xl">3</span>
-              </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">나중에 정리하기</h3>
-              <p className="text-slate-600">Jotto를 열어서 모든 것을 할 일, 캘린더 이벤트, 메모로 분류하세요</p>
-            </div>
-          </div>
-        </div>
-      </section>
+      <section className="py-24 px-6 bg-white relative overflow-hidden">
+        {/* Background decoration */}
+        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/30 to-white"></div>
 
-      {/* Demo Section */}
-      <section className="py-16 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
-        <div className="container mx-auto max-w-6xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Jotto 실제 사용 모습</h2>
-            <p className="text-lg text-slate-600">생각을 얼마나 매끄럽게 캡처하고 정리할 수 있는지 확인해보세요</p>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">간단한 워크플로우</h2>
+            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
+              복잡한 설정 없이, 두 단계만으로 저장하고 정리하세요
+            </p>
           </div>
 
-          <div className="grid lg:grid-cols-2 gap-12 items-start">
-            {/* Capture Demo */}
-            <div className="text-center">
-              <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-                <img src="/merged-document.gif" alt="Jotto로 Slack에서 텍스트 캡처하기" className="w-full rounded-xl" />
+          <div className="space-y-32">
+            {/* Step 1 */}
+            <div className="relative">
+              {/* Step indicator */}
+              <div className="flex items-center justify-center mb-12">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
+                  <div className="text-sm font-medium text-blue-600 uppercase tracking-wider">Step 01</div>
+                  <div className="w-16 h-px bg-gradient-to-r from-blue-500 to-transparent"></div>
+                </div>
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">1. 어디서든 캡처</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Slack, Discord, Chrome 또는 모든 앱에서 텍스트를 선택하세요.{" "}
-                <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd>를 누르면 즉시 Jotto
-                받은편지함에 저장됩니다.
-              </p>
-            </div>
 
-            {/* Organize Demo */}
-            <div className="text-center">
-              <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-                <img
-                  src="/organize-later.jpeg"
-                  alt="Jotto 받은편지함에서 캡처된 텍스트 정리하기"
-                  className="w-full rounded-xl"
-                />
-              </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">2. 나중에 정리</h3>
-              <p className="text-slate-600 leading-relaxed">
-                Jotto를 열어서 캡처한 모든 콘텐츠를 확인하세요. 클릭 한 번으로 할 일, 캘린더 이벤트, 메모로 쉽게 분류할
-                수 있습니다.
-              </p>
-            </div>
-          </div>
-
-          <div className="text-center mt-12">
-            <a href="/api/download">
-              <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
-                <Download className="w-5 h-5 mr-2" />
-                지금 Jotto 사용해보기
-              </Button>
-            </a>
-          </div>
-        </div>
-      </section>
-
-      {/* Key Features */}
-      <section className="py-16 px-6 bg-slate-50">
-        <div className="container mx-auto max-w-5xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">주요 기능</h2>
-            <p className="text-lg text-slate-600">생각을 캡처하고 정리하는 데 필요한 모든 것</p>
-          </div>
-          <div className="grid md:grid-cols-2 gap-8">
-            <Card className="border-0 shadow-sm bg-white">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-blue-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Zap className="w-6 h-6 text-blue-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">어디서든 텍스트 저장</h3>
-                    <p className="text-slate-600 mb-4">
-                      Slack, Discord, Chrome, Notion 등 텍스트를 선택할 수 있는 모든 앱에서 작동합니다. 드래그하고
-                      단축키만 누르면 저장됩니다.
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="lg:order-1">
+                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                    어디에서든
+                    <br />
+                    <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
+                      드래그 하세요
+                    </span>
+                  </h3>
+                  <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+                    <p>
+                      Slack, Discord, Chrome 등 원하는 곳 어디에서든
+                      <br />
+                      드래그 후 단축키 한 번이면 대화나 텍스트가 그대로 저장됩니다.
                     </p>
-                    <div className="flex gap-2 flex-wrap">
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <MessageSquare className="w-3 h-3 mr-1" />
-                        Slack
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        Discord
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        Chrome
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        Notion
-                      </Badge>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full">
+                      <span className="text-blue-700 font-semibold">머릿속은 비우고 기억은 Jotto 에게 맡기세요</span>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
 
-            <Card className="border-0 shadow-sm bg-white">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-purple-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <FolderOpen className="w-6 h-6 text-purple-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">나중에 스트레스 없이 정리</h3>
-                    <p className="text-slate-600 mb-4">
-                      캡처된 모든 텍스트가 앱에 저장되고 접근 가능합니다. 할 일, 캘린더 이벤트, 메모로 쉽게 분류하세요.
-                    </p>
-                    <div className="flex gap-2 flex-wrap">
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <CheckCircle className="w-3 h-3 mr-1" />할 일
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <Calendar className="w-3 h-3 mr-1" />
-                        캘린더
-                      </Badge>
-                      <Badge variant="secondary" className="bg-slate-100">
-                        <FileText className="w-3 h-3 mr-1" />
-                        메모
-                      </Badge>
+                <div className="lg:order-2">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                    <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
+                      <video className="w-full rounded-xl shadow-lg" autoPlay loop muted playsInline>
+                        <source
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-everywhere-edit-bqBaYl0uUA3DcRaUuARDImRoJyQ70o.mp4"
+                          type="video/mp4"
+                        />
+                        브라우저가 비디오를 지원하지 않습니다.
+                      </video>
                     </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
+              </div>
+            </div>
 
-            <Card className="border-0 shadow-sm bg-white md:col-span-2">
-              <CardContent className="p-8">
-                <div className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-green-100 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <Bell className="w-6 h-6 text-green-600" />
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">방해받지 않고 캡처</h3>
-                    <p className="text-slate-600">
-                      팝업이나 방해 요소 없이 조용히 저장됩니다. 모든 것이 백그라운드에서 매끄럽게 캡처되는 동안
-                      집중력을 유지하세요.
+            {/* Connection line */}
+            <div className="flex justify-center">
+              <div className="flex flex-col items-center gap-4">
+                <ArrowDown className="w-6 h-6 text-slate-400 animate-bounce" />
+                <div className="w-px h-16 bg-gradient-to-b from-slate-300 to-transparent"></div>
+              </div>
+            </div>
+
+            {/* Step 2 */}
+            <div className="relative">
+              {/* Step indicator */}
+              <div className="flex items-center justify-center mb-12">
+                <div className="flex items-center gap-4">
+                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
+                  <div className="text-sm font-medium text-purple-600 uppercase tracking-wider">Step 02</div>
+                  <div className="w-16 h-px bg-gradient-to-r from-purple-500 to-transparent"></div>
+                </div>
+              </div>
+
+              <div className="grid lg:grid-cols-2 gap-16 items-center">
+                <div className="lg:order-2">
+                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+                    여유로울때
+                    <br />
+                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
+                      정리하세요
+                    </span>
+                  </h3>
+                  <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
+                    <p>
+                      저장된 맥락을 보고 To-do·캘린더·메모로
+                      <br />한 번에 정리하세요
                     </p>
+                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
+                      <span className="text-purple-700 font-semibold">빠르고, 쉽고, 편합니다</span>
+                    </div>
                   </div>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
 
-      {/* FAQ */}
-      <section className="py-16 px-6 bg-white">
-        <div className="container mx-auto max-w-3xl">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">자주 묻는 질문</h2>
-          </div>
-          <div className="space-y-8">
-            <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">모든 앱에서 작동하나요?</h3>
-              <p className="text-slate-600">
-                네! 텍스트를 선택할 수 있는 곳이라면 어디서든 Jotto가 작동합니다. 웹 브라우저, 메시징 앱, 문서 편집기 등
-                수백 개의 애플리케이션에서 테스트했습니다.
-              </p>
-            </div>
-            <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">저장된 텍스트는 어디로 가나요?</h3>
-              <p className="text-slate-600">
-                Jotto 앱을 열면 캡처한 모든 것의 목록을 볼 수 있습니다. 저장된 모든 텍스트는 로컬에 저장되고 시간순으로
-                정리되어 필요한 것을 쉽게 찾을 수 있습니다.
-              </p>
-            </div>
-            <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">저장된 항목을 어떻게 정리하나요?</h3>
-              <p className="text-slate-600">
-                저장된 텍스트를 클릭하고 할 일, 캘린더 이벤트, 메모로 지정하기만 하면 됩니다. 태그 추가, 마감일 설정,
-                사용자 정의 카테고리 생성으로 모든 것을 체계적으로 관리할 수 있습니다.
-              </p>
+                <div className="lg:order-1">
+                  <div className="relative group">
+                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
+                    <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
+                      <video className="w-full rounded-xl shadow-lg" autoPlay loop muted playsInline>
+                        <source
+                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-draginjotto-edit-eFpJ8nR3KxsUs0XXF97J5YFpTRffOE.mp4"
+                          type="video/mp4"
+                        />
+                        브라우저가 비디오를 지원하지 않습니다.
+                      </video>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -289,7 +234,7 @@ export default function JottoLanding() {
         <div className="container mx-auto max-w-4xl text-center">
           <h2 className="text-4xl font-bold text-white mb-6">머릿속을 비울 준비가 되셨나요?</h2>
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            이미 Jotto로 워크플로우를 간소화한 수천 명의 사용자와 함께하세요.
+            이미 Jotto로 똑똑해지고 있는 수많은 사용자들과 함께하세요.
           </p>
           <a href="/api/download">
             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
@@ -310,17 +255,16 @@ export default function JottoLanding() {
               </div>
               <div>
                 <div className="font-semibold text-slate-900">Jotto</div>
-                <div className="text-sm text-slate-600">버전 1.0</div>
+                <div className="text-sm text-slate-600">macOS 생산성 도구</div>
               </div>
             </div>
             <div className="text-center md:text-right">
-              <div className="text-sm text-slate-600">문의: contact@jotto.in</div>
-              <div className="text-sm text-slate-500">macOS 생산성 도구</div>
+              <div className="text-sm text-slate-500">텍스트를 즉시 캡처하고 정리하세요</div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. 모든 권리 보유. •
+              © 2025 Jotto. 모든 권리 보유. • 문의: contact@jotto.in •
               <a href="/privacy" className="hover:text-slate-700 ml-1">
                 개인정보처리방침
               </a>
