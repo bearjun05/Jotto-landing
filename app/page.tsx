@@ -248,7 +248,7 @@ export default function JottoLanding() {
       {/* Footer */}
       <footer className="py-12 px-6 bg-slate-50 border-t border-slate-200">
         <div className="container mx-auto max-w-5xl">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-6">
+          <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-3">
               <div className="w-8 h-8 rounded-lg overflow-hidden">
                 <img src="/jotto-icon.png" alt="Jotto" className="w-full h-full object-cover" />
@@ -257,9 +257,6 @@ export default function JottoLanding() {
                 <div className="font-semibold text-slate-900">Jotto</div>
                 <div className="text-sm text-slate-600">macOS 생산성 도구</div>
               </div>
-            </div>
-            <div className="text-center md:text-right">
-              <div className="text-sm text-slate-500">텍스트를 즉시 캡처하고 정리하세요</div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
