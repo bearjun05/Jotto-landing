@@ -6,40 +6,26 @@
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
     
+    <!-- 최신 버전 정보 (빌드 후 업데이트 필요) -->
     <item>
-      <title>Version 1.7.2</title>
-      <pubDate>Mon, 19 Aug 2025 12:00:00 +0000</pubDate>
-      <enclosure url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.7.2/jotto.zip"
-                 sparkle:version="172"
-                 sparkle:shortVersionString="1.7.2"
-                 type="application/octet-stream"/>
-      <sparkle:version>172</sparkle:version>
-      <sparkle:shortVersionString>1.7.2</sparkle:shortVersionString>
-      
-      <!-- 강제 업데이트 플래그 (필요시 주석 해제) -->
-      <!-- <sparkle:critical>true</sparkle:critical> -->
-      
-      <!-- 일반 업데이트 릴리즈 노트 -->
-      <sparkle:releaseNotes><![CDATA[
-        • 성능 개선 및 안정성 향상
-        • 사용자 인터페이스 개선
-        • 버그 수정 및 최적화
-        • 새로운 기능 추가
-      ]]></sparkle:releaseNotes>
-      
-      <!-- 강제 업데이트용 릴리즈 노트 (강제 업데이트 시 위 내용과 교체) -->
-      <!--
-      <sparkle:releaseNotes><![CDATA[
-        🚨 필수 보안 업데이트
-        
-        중요한 보안 업데이트가 포함되어 있습니다. 
-        이 업데이트는 필수입니다.
-        
-        • 보안 취약점 수정
-        • 중요한 버그 수정
-        • 시스템 안정성 향상
-      ]]></sparkle:releaseNotes>
-      -->
+      <title>Version 1.1</title>
+      <description><![CDATA[
+        <h2>새로운 기능</h2>
+        <ul>
+          <li>자동 업데이트 기능 추가</li>
+          <li>성능 개선 및 버그 수정</li>
+        </ul>
+      ]]></description>
+      <sparkle:releaseNotesLink>https://github.com/YOUR_USERNAME/jotto/releases/tag/v1.0.0</sparkle:releaseNotesLink>
+      <pubDate>Tue, 13 Aug 2025 15:00:00 +0900</pubDate>
+      <enclosure
+        url="https://github.com/YOUR_USERNAME/jotto/releases/download/v1.0.0/jotto.zip"
+        sparkle:edSignature="SIGNATURE_PLACEHOLDER"
+        sparkle:minimumSystemVersion="13.0"
+        length="FILE_SIZE_PLACEHOLDER"
+        type="application/octet-stream"/>
+      <sparkle:version>100</sparkle:version>
+      <sparkle:shortVersionString>1.1</sparkle:shortVersionString>
     </item>
     
   </channel>

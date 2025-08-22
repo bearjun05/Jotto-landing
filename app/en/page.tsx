@@ -14,7 +14,7 @@ import { Card, CardContent } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import Link from "next/link"
 
-export default function JottoLanding() {
+export default function JottoLandingEN() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
       {/* Header */}
@@ -28,13 +28,13 @@ export default function JottoLanding() {
               <span className="font-semibold text-xl text-slate-900">Jotto</span>
             </div>
             <div className="flex items-center gap-4">
-              <Link href="/en" className="text-sm text-slate-600 hover:text-slate-900">
-                English
+              <Link href="/" className="text-sm text-slate-600 hover:text-slate-900">
+                한국어
               </Link>
               <a href="/api/download">
                 <Button className="bg-slate-900 hover:bg-slate-800 text-white">
                   <Download className="w-4 h-4 mr-2" />
-                  다운로드
+                  Download
                 </Button>
               </a>
             </div>
@@ -48,30 +48,29 @@ export default function JottoLanding() {
           {/* 이 부분을 제거 */}
           {/* <Badge variant="secondary" className="mb-6 bg-blue-50 text-blue-700 border-blue-200">
             <img src="/jotto-icon.png" alt="Jotto" className="w-4 h-4 mr-1 inline" />
-            Mac용 Jotto
+            Jotto for Mac
           </Badge> */}
           <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            머릿속을 비우고,
+            Clear your mind,
             <br />
             <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              생각을 저장하세요
+              save your thoughts
             </span>
           </h1>
           <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            텍스트를 드래그하고 <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd>만
-            누르세요.
+            Just drag and press <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd>.
             <br />
-            Jotto가 즉시 저장해서 집중력을 유지하고 나중에 정리할 수 있습니다.
+            Jotto saves your text instantly so you can stay focused and organize later.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
             <a href="/api/download">
               <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
                 <Download className="w-5 h-5 mr-2" />
-                Mac App Store에서 다운로드
+                Download Jotto
               </Button>
             </a>
             <Button variant="outline" size="lg" className="px-8 py-3 bg-transparent">
-              데모 보기
+              Watch Demo
               <ArrowRight className="w-4 h-4 ml-2" />
             </Button>
           </div>
@@ -82,32 +81,32 @@ export default function JottoLanding() {
       <section className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">사용 방법</h2>
-            <p className="text-lg text-slate-600">어디서든 무엇이든 캡처하는 간단한 3단계</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">How It Works</h2>
+            <p className="text-lg text-slate-600">Three simple steps to capture anything, anywhere</p>
           </div>
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-blue-500 to-blue-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl">1</span>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">텍스트 선택 (드래그)</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Select (drag) any text</h3>
               <p className="text-slate-600">
-                Slack, Discord, Chrome, Notion 등 텍스트를 선택할 수 있는 모든 앱에서 작동합니다
+                Works in Slack, Discord, Chrome, Notion—any app that lets you select text
               </p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl">2</span>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">⌘ + ⇧ + S 누르기</h3>
-              <p className="text-slate-600">단축키만 누르면 즉시 저장—팝업이나 방해 요소 없이</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Press ⌘ + ⇧ + S</h3>
+              <p className="text-slate-600">Just hit the hotkey to save instantly—no popups or distractions</p>
             </div>
             <div className="text-center">
               <div className="w-16 h-16 bg-gradient-to-br from-green-500 to-green-600 rounded-2xl flex items-center justify-center mx-auto mb-6">
                 <span className="text-white text-2xl">3</span>
               </div>
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">나중에 정리하기</h3>
-              <p className="text-slate-600">Jotto를 열어서 모든 것을 할 일, 캘린더 이벤트, 메모로 분류하세요</p>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Organize later</h3>
+              <p className="text-slate-600">Open Jotto to sort everything into To-dos, Calendar events, or Memos</p>
             </div>
           </div>
         </div>
@@ -117,21 +116,25 @@ export default function JottoLanding() {
       <section className="py-16 px-6 bg-gradient-to-br from-blue-50 to-purple-50">
         <div className="container mx-auto max-w-6xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">Jotto 실제 사용 모습</h2>
-            <p className="text-lg text-slate-600">생각을 얼마나 매끄럽게 캡처하고 정리할 수 있는지 확인해보세요</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">See Jotto in Action</h2>
+            <p className="text-lg text-slate-600">Watch how seamlessly you can capture and organize your thoughts</p>
           </div>
 
           <div className="grid lg:grid-cols-2 gap-12 items-start">
             {/* Capture Demo */}
             <div className="text-center">
               <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
-                <img src="/merged-document.gif" alt="Jotto로 Slack에서 텍스트 캡처하기" className="w-full rounded-xl" />
+                <img
+                  src="/merged-document.gif"
+                  alt="Capturing text from Slack with Jotto"
+                  className="w-full rounded-xl"
+                />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">1. 어디서든 캡처</h3>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-3">1. Capture from Anywhere</h3>
               <p className="text-slate-600 leading-relaxed">
-                Slack, Discord, Chrome 또는 모든 앱에서 텍스트를 선택하세요.{" "}
-                <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd>를 누르면 즉시 Jotto
-                받은편지함에 저장됩니다.
+                Select any text in Slack, Discord, Chrome, or any app. Press{" "}
+                <kbd className="px-2 py-1 bg-slate-100 rounded text-sm font-mono">⌘ + ⇧ + S</kbd> and it's instantly
+                saved to your Jotto inbox.
               </p>
             </div>
 
@@ -140,14 +143,14 @@ export default function JottoLanding() {
               <div className="bg-white rounded-2xl shadow-lg p-6 mb-6">
                 <img
                   src="/organize-later.jpeg"
-                  alt="Jotto 받은편지함에서 캡처된 텍스트 정리하기"
+                  alt="Organizing captured text in Jotto inbox"
                   className="w-full rounded-xl"
                 />
               </div>
-              <h3 className="text-2xl font-semibold text-slate-900 mb-3">2. 나중에 정리</h3>
+              <h3 className="text-2xl font-semibold text-slate-900 mb-3">2. Organize Later</h3>
               <p className="text-slate-600 leading-relaxed">
-                Jotto를 열어서 캡처한 모든 콘텐츠를 확인하세요. 클릭 한 번으로 할 일, 캘린더 이벤트, 메모로 쉽게 분류할
-                수 있습니다.
+                Open Jotto to see all your captured content. Easily sort items into To-dos, Calendar events, or Memos
+                with just a click.
               </p>
             </div>
           </div>
@@ -156,7 +159,7 @@ export default function JottoLanding() {
             <a href="/api/download">
               <Button size="lg" className="bg-slate-900 hover:bg-slate-800 text-white px-8 py-3">
                 <Download className="w-5 h-5 mr-2" />
-                지금 Jotto 사용해보기
+                Try Jotto Now
               </Button>
             </a>
           </div>
@@ -167,8 +170,8 @@ export default function JottoLanding() {
       <section className="py-16 px-6 bg-slate-50">
         <div className="container mx-auto max-w-5xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">주요 기능</h2>
-            <p className="text-lg text-slate-600">생각을 캡처하고 정리하는 데 필요한 모든 것</p>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Key Features</h2>
+            <p className="text-lg text-slate-600">Everything you need to capture and organize your thoughts</p>
           </div>
           <div className="grid md:grid-cols-2 gap-8">
             <Card className="border-0 shadow-sm bg-white">
@@ -178,10 +181,10 @@ export default function JottoLanding() {
                     <Zap className="w-6 h-6 text-blue-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">어디서든 텍스트 저장</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Save text from anywhere</h3>
                     <p className="text-slate-600 mb-4">
-                      Slack, Discord, Chrome, Notion 등 텍스트를 선택할 수 있는 모든 앱에서 작동합니다. 드래그하고
-                      단축키만 누르면 저장됩니다.
+                      Works in Slack, Discord, Chrome, Notion—any app that lets you select text. Just drag and hit the
+                      hotkey to save.
                     </p>
                     <div className="flex gap-2 flex-wrap">
                       <Badge variant="secondary" className="bg-slate-100">
@@ -210,21 +213,23 @@ export default function JottoLanding() {
                     <FolderOpen className="w-6 h-6 text-purple-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">나중에 스트레스 없이 정리</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Organize later, stress-free</h3>
                     <p className="text-slate-600 mb-4">
-                      캡처된 모든 텍스트가 앱에 저장되고 접근 가능합니다. 할 일, 캘린더 이벤트, 메모로 쉽게 분류하세요.
+                      All captured text is stored and accessible in the app. Easily sort into To-dos, Calendar events,
+                      or Memos.
                     </p>
                     <div className="flex gap-2 flex-wrap">
                       <Badge variant="secondary" className="bg-slate-100">
-                        <CheckCircle className="w-3 h-3 mr-1" />할 일
+                        <CheckCircle className="w-3 h-3 mr-1" />
+                        To-dos
                       </Badge>
                       <Badge variant="secondary" className="bg-slate-100">
                         <Calendar className="w-3 h-3 mr-1" />
-                        캘린더
+                        Calendar
                       </Badge>
                       <Badge variant="secondary" className="bg-slate-100">
                         <FileText className="w-3 h-3 mr-1" />
-                        메모
+                        Memos
                       </Badge>
                     </div>
                   </div>
@@ -239,10 +244,10 @@ export default function JottoLanding() {
                     <Bell className="w-6 h-6 text-green-600" />
                   </div>
                   <div>
-                    <h3 className="text-xl font-semibold text-slate-900 mb-3">방해받지 않고 캡처</h3>
+                    <h3 className="text-xl font-semibold text-slate-900 mb-3">Capture without interruption</h3>
                     <p className="text-slate-600">
-                      팝업이나 방해 요소 없이 조용히 저장됩니다. 모든 것이 백그라운드에서 매끄럽게 캡처되는 동안
-                      집중력을 유지하세요.
+                      No popups or distractions—just a silent save. Your focus stays uninterrupted while everything gets
+                      captured seamlessly in the background.
                     </p>
                   </div>
                 </div>
@@ -256,28 +261,28 @@ export default function JottoLanding() {
       <section className="py-16 px-6 bg-white">
         <div className="container mx-auto max-w-3xl">
           <div className="text-center mb-16">
-            <h2 className="text-3xl font-bold text-slate-900 mb-4">자주 묻는 질문</h2>
+            <h2 className="text-3xl font-bold text-slate-900 mb-4">Frequently Asked Questions</h2>
           </div>
           <div className="space-y-8">
             <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">모든 앱에서 작동하나요?</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Does it work in every app?</h3>
               <p className="text-slate-600">
-                네! 텍스트를 선택할 수 있는 곳이라면 어디서든 Jotto가 작동합니다. 웹 브라우저, 메시징 앱, 문서 편집기 등
-                수백 개의 애플리케이션에서 테스트했습니다.
+                Yes! As long as you can select text, Jotto will work. We've tested it across hundreds of applications
+                including web browsers, messaging apps, document editors, and more.
               </p>
             </div>
             <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">저장된 텍스트는 어디로 가나요?</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">Where do saved texts go?</h3>
               <p className="text-slate-600">
-                Jotto 앱을 열면 캡처한 모든 것의 목록을 볼 수 있습니다. 저장된 모든 텍스트는 로컬에 저장되고 시간순으로
-                정리되어 필요한 것을 쉽게 찾을 수 있습니다.
+                Open the Jotto app to see a list of everything you've captured. All your saved text is stored locally
+                and organized chronologically, making it easy to find what you need.
               </p>
             </div>
             <div className="border-b border-slate-200 pb-8">
-              <h3 className="text-xl font-semibold text-slate-900 mb-3">저장된 항목을 어떻게 정리하나요?</h3>
+              <h3 className="text-xl font-semibold text-slate-900 mb-3">How do I organize saved items?</h3>
               <p className="text-slate-600">
-                저장된 텍스트를 클릭하고 할 일, 캘린더 이벤트, 메모로 지정하기만 하면 됩니다. 태그 추가, 마감일 설정,
-                사용자 정의 카테고리 생성으로 모든 것을 체계적으로 관리할 수 있습니다.
+                Simply click on any saved text and assign it as a To-do, Calendar event, or Memo. You can also add tags,
+                set due dates, and create custom categories to keep everything organized.
               </p>
             </div>
           </div>
@@ -287,14 +292,14 @@ export default function JottoLanding() {
       {/* CTA Section */}
       <section className="py-20 px-6 bg-gradient-to-r from-slate-900 to-slate-800">
         <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">머릿속을 비울 준비가 되셨나요?</h2>
+          <h2 className="text-4xl font-bold text-white mb-6">Ready to clear your mind?</h2>
           <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            이미 Jotto로 워크플로우를 간소화한 수천 명의 사용자와 함께하세요.
+            Join thousands of users who have already streamlined their workflow with Jotto.
           </p>
           <a href="/api/download">
             <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
               <Download className="w-5 h-5 mr-2" />
-              Jotto 다운로드
+              Download Jotto
             </Button>
           </a>
         </div>
@@ -310,23 +315,23 @@ export default function JottoLanding() {
               </div>
               <div>
                 <div className="font-semibold text-slate-900">Jotto</div>
-                <div className="text-sm text-slate-600">버전 1.0</div>
+                <div className="text-sm text-slate-600">Version 1.0</div>
               </div>
             </div>
             <div className="text-center md:text-right">
-              <div className="text-sm text-slate-600">문의: contact@jotto.in</div>
-              <div className="text-sm text-slate-500">macOS 생산성 도구</div>
+              <div className="text-sm text-slate-600">Contact: contact@jotto.in</div>
+              <div className="text-sm text-slate-500">macOS productivity tool</div>
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. 모든 권리 보유. •
-              <a href="/privacy" className="hover:text-slate-700 ml-1">
-                개인정보처리방침
+              © 2025 Jotto. All rights reserved. •
+              <a href="/en/privacy" className="hover:text-slate-700 ml-1">
+                Privacy Policy
               </a>
               {" • "}
-              <a href="/terms" className="hover:text-slate-700">
-                이용약관
+              <a href="/en/terms" className="hover:text-slate-700">
+                Terms of Service
               </a>
             </p>
           </div>
