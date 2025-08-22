@@ -2,12 +2,13 @@ import type React from "react"
 import type { Metadata } from "next"
 import { GeistSans } from "geist/font/sans"
 import { GeistMono } from "geist/font/mono"
-import "./globals.css"
+import "../globals.css"
 
 export const metadata: Metadata = {
-  title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
-  description: "빠르고 간단한 메모 앱 Jotto로 언제든지 떠오르는 생각을 저장하세요. macOS용 무료 다운로드.",
-  keywords: ["메모앱", "macOS", "생산성", "노트", "빠른메모", "Jotto"],
+  title: "Jotto - Clear your mind, save your thoughts",
+  description:
+    "Save your fleeting thoughts instantly with Jotto, a fast and simple note-taking app. Free download for macOS.",
+  keywords: ["note app", "macOS", "productivity", "notes", "quick notes", "Jotto"],
   authors: [{ name: "Jotto Team" }],
   creator: "Jotto Team",
   publisher: "Jotto Team",
@@ -18,32 +19,32 @@ export const metadata: Metadata = {
   },
   metadataBase: new URL("https://jotto.in"),
   alternates: {
-    canonical: "/",
+    canonical: "/en",
     languages: {
       "ko-KR": "/",
       "en-US": "/en",
     },
   },
   openGraph: {
-    title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
-    description: "빠르고 간단한 메모 앱 Jotto로 언제든지 떠오르는 생각을 저장하세요.",
-    url: "https://jotto.in",
+    title: "Jotto - Clear your mind, save your thoughts",
+    description: "Save your fleeting thoughts instantly with Jotto, a fast and simple note-taking app.",
+    url: "https://jotto.in/en",
     siteName: "Jotto",
-    locale: "ko_KR",
+    locale: "en_US",
     type: "website",
     images: [
       {
         url: "/jotto-icon.png",
         width: 1200,
         height: 630,
-        alt: "Jotto - 빠른 메모 앱",
+        alt: "Jotto - Quick Note Taking App",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Jotto - 머릿속을 비우고, 생각을 저장하세요",
-    description: "빠르고 간단한 메모 앱 Jotto로 언제든지 떠오르는 생각을 저장하세요.",
+    title: "Jotto - Clear your mind, save your thoughts",
+    description: "Save your fleeting thoughts instantly with Jotto, a fast and simple note-taking app.",
     images: ["/jotto-icon.png"],
   },
   icons: {
@@ -56,16 +57,15 @@ export const metadata: Metadata = {
     other: [{ rel: "mask-icon", url: "/safari-pinned-tab.png", color: "#000000" }],
   },
   manifest: "/site.webmanifest",
-    generator: 'v0.app'
 }
 
-export default function RootLayout({
+export default function EnglishLayout({
   children,
 }: Readonly<{
   children: React.ReactNode
 }>) {
   return (
-    <html lang="ko">
+    <html lang="en">
       <head>
         <style>{`
 html {
