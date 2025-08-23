@@ -7,20 +7,20 @@
     <language>ko</language>
     
     <item>
-      <title>Version 1.8.0</title>
-      <pubDate>Mon, 21 Aug 2025 18:30:00 +0000</pubDate>
+      <title>Version 1.8.1</title>
+      <pubDate>Mon, 22 Aug 2025 18:30:00 +0000</pubDate>
       
       <!-- 자동 업데이트용: ZIP 파일 -->
       <enclosure 
         url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.0/jotto.zip"
-        sparkle:version="180"
-        sparkle:shortVersionString="1.8.0"
+        sparkle:version="181"
+        sparkle:shortVersionString="1.8.1"
         type="application/zip"
         length="0"/>
       
       <!-- 랜딩페이지용: DMG 파일 (두 번째 enclosure) -->
       <enclosure 
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.0/jotto.dmg"
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.1/jotto.dmg"
         type="application/x-apple-diskimage"
         length="0"/>
       
