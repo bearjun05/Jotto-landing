@@ -12,7 +12,7 @@
       
       <!-- 자동 업데이트용: ZIP 파일 -->
       <enclosure 
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.0/jotto.zip"
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.1/jotto.zip"
         sparkle:version="181"
         sparkle:shortVersionString="1.8.1"
         type="application/zip"
