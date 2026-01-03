@@ -12,21 +12,21 @@
       
       <!-- 자동 업데이트용: ZIP 파일 -->
       <enclosure 
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.1/jotto.zip"
-        sparkle:version="181"
-        sparkle:shortVersionString="1.8.1"
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.9.0/jotto.zip"
+        sparkle:version="190"
+        sparkle:shortVersionString="1.9.0"
         type="application/zip"
         length="0"/>
       
       <!-- 랜딩페이지용: DMG 파일 (두 번째 enclosure) -->
       <enclosure 
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.8.1/jotto.dmg"
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.9.0/jotto.dmg"
         type="application/x-apple-diskimage"
         length="0"/>
       
       <!-- Sparkle 버전 정보 -->
-      <sparkle:version>180</sparkle:version>
-      <sparkle:shortVersionString>1.8.0</sparkle:shortVersionString>
+      <sparkle:version>190</sparkle:version>
+      <sparkle:shortVersionString>1.9.0</sparkle:shortVersionString>
       
       <!-- 강제 업데이트 플래그 (필요시 주석 해제) -->
        <sparkle:critical>true</sparkle:critical> 
