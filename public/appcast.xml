@@ -6,25 +6,19 @@
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
     <item>
-      <title>Version 1.10.0</title>
-      <description><![CDATA[
-        <h2>새로운 기능</h2>
-        <ul>
-          <li>자동 업데이트 기능 추가</li>
-          <li>성능 개선 및 버그 수정</li>
-          <li>UI/UX 개선</li>
-        </ul>
-      ]]></description>
-      <sparkle:releaseNotesLink>https://github.com/bearjun05/jotto-release/releases/tag/v1.10.0</sparkle:releaseNotesLink>
-      <pubDate>Sun, 18 Jan 2026 06:42:36 +0000</pubDate>
+      <title>Version 1.10.1</title>
+      <description>Jotto 1.10.1 업데이트: 성능 개선 및 버그 수정</description>
+      <sparkle:releaseNotesLink>https://github.com/bearjun05/jotto-release/releases/tag/v1.10.1</sparkle:releaseNotesLink>
+      <pubDate>Sun, 18 Jan 2026 07:02:47 +0000</pubDate>
       <enclosure
-        url="https://github.com/bearjun05/jotto-release/releases/download/v1.10.0/jotto.zip"
-        sparkle:edSignature="olBmI7olwaw1JGp0pm9x7IW3yltWeXoXFt/jn+C76tmY7HbtqIiqRUV1YpuHPcs/gYlzVIbKERGJiQT3goyADQ=="
+        url="https://github.com/bearjun05/jotto-release/releases/download/v1.10.1/jotto.zip"
+        sparkle:edSignature="eBTp5OAeCARrTNS/aH533pVAuRSovuf+K0Cwa6fLtVMS+a3C7rMLtdTISLw5+zh5x58QVNG+5Qd5I7ar1abIAQ=="
         sparkle:minimumSystemVersion="13.0"
-        length="38763679"
+        length="38767746"
         type="application/octet-stream"/>
-      <sparkle:version>1100</sparkle:version>
-      <sparkle:shortVersionString>1.10.0</sparkle:shortVersionString>
+      <sparkle:version>1101</sparkle:version>
+      <sparkle:shortVersionString>1.10.1</sparkle:shortVersionString>
+      
     </item>
   </channel>
 </rss>
