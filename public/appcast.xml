@@ -5,57 +5,26 @@
     <link>https://www.jotto.in/appcast.xml</link>
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
-    
     <item>
-      <title>Version 1.8.1</title>
-      <pubDate>Mon, 22 Aug 2025 18:30:00 +0000</pubDate>
-      
-      <!-- 자동 업데이트용: ZIP 파일 -->
-      <enclosure 
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.9.0/jotto.zip"
-        sparkle:version="190"
-        sparkle:shortVersionString="1.9.0"
-        type="application/zip"
-        length="0"/>
-      
-      <!-- 랜딩페이지용: DMG 파일 (두 번째 enclosure) -->
-      <enclosure 
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.9.0/jotto.dmg"
-        type="application/x-apple-diskimage"
-        length="0"/>
-      
-      <!-- Sparkle 버전 정보 -->
-      <sparkle:version>190</sparkle:version>
-      <sparkle:shortVersionString>1.9.0</sparkle:shortVersionString>
-      
-      <!-- 강제 업데이트 플래그 (필요시 주석 해제) -->
-       <sparkle:critical>true</sparkle:critical> 
-      
-      <!-- 일반 업데이트 릴리즈 노트 
-      <sparkle:releaseNotes><![CDATA[
-        • 성능 개선 및 안정성 향상
-        • 사용자 인터페이스 개선
-        • 버그 수정 및 최적화
-        • 새로운 기능 추가
-      ]]></sparkle:releaseNotes>
-      -->
-      <!-- 강제 업데이트용 릴리즈 노트 (강제 업데이트 시 위 내용과 교체) -->
-     
-      <sparkle:releaseNotes><![CDATA[
-        🚨 필수 보안 업데이트
-        
-        중요한 보안 업데이트가 포함되어 있습니다. 
-        이 업데이트는 필수입니다.
-        • 보안 취약점 수정
-        • 중요한 버그 수정
-        • 시스템 안정성 향상
-        
-        ⚠️ 주의: 이 업데이트는 앱 사용을 위해 필수입니다.
-        업데이트하지 않으면 앱을 사용할 수 없습니다.
-      ]]></sparkle:releaseNotes>
-     
-      
+      <title>Version 1.10.0</title>
+      <description><![CDATA[
+        <h2>새로운 기능</h2>
+        <ul>
+          <li>자동 업데이트 기능 추가</li>
+          <li>성능 개선 및 버그 수정</li>
+          <li>UI/UX 개선</li>
+        </ul>
+      ]]></description>
+      <sparkle:releaseNotesLink>https://github.com/bearjun05/jotto-release/releases/tag/v1.10.0</sparkle:releaseNotesLink>
+      <pubDate>Sun, 18 Jan 2026 06:42:36 +0000</pubDate>
+      <enclosure
+        url="https://github.com/bearjun05/jotto-release/releases/download/v1.10.0/jotto.zip"
+        sparkle:edSignature="olBmI7olwaw1JGp0pm9x7IW3yltWeXoXFt/jn+C76tmY7HbtqIiqRUV1YpuHPcs/gYlzVIbKERGJiQT3goyADQ=="
+        sparkle:minimumSystemVersion="13.0"
+        length="38763679"
+        type="application/octet-stream"/>
+      <sparkle:version>1100</sparkle:version>
+      <sparkle:shortVersionString>1.10.0</sparkle:shortVersionString>
     </item>
-    
   </channel>
 </rss>
