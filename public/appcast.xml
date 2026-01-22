@@ -6,8 +6,8 @@
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
     <item>
-      <title>Version 1.10.17</title>
-      <description>Jotto 1.10.17 업데이트: 성능 개선 및 버그 수정</description>
+      <title>Version 1.10.20</title>
+      <description>Jotto 1.10.20 업데이트: 성능 개선 및 버그 수정</description>
       <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v1.10.17</sparkle:releaseNotesLink>
       <pubDate>Mon, 19 Jan 2026 13:42:03 +0000</pubDate>
       <enclosure
