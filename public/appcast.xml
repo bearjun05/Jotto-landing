@@ -8,7 +8,7 @@
     <item>
       <title>Version 2.0.0</title>
       <description>Jotto 2.0.0 업데이트: 회의 녹음 및 AI 요약 기능 추가</description>
-      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v1.10.17</sparkle:releaseNotesLink>
+      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v2.0.0</sparkle:releaseNotesLink>
       <pubDate>Mon, 24 Jan 2026 10:29:03 +0000</pubDate>
       <enclosure
         url="https://github.com/bearjun05/Jotto-landing/releases/download/v1.10.17/jotto.dmg"
@@ -17,7 +17,7 @@
         length="39645315"
         type="application/octet-stream"/>
       <sparkle:version>1117</sparkle:version>
-      <sparkle:shortVersionString>1.10.17</sparkle:shortVersionString>
+      <sparkle:shortVersionString>2.0.0</sparkle:shortVersionString>
     </item>
   </channel>
 </rss>
