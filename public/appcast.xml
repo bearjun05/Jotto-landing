@@ -6,18 +6,18 @@
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
     <item>
-      <title>Version 2.0.0</title>
-      <description>Jotto 2.0.0 업데이트: 회의 녹음 및 AI 요약 기능 추가</description>
+      <title>Version 2.1.0</title>
+      <description>Jotto 2.1.0 업데이트: 회의 녹음 및 AI 요약 기능 추가</description>
       <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v2.0.0</sparkle:releaseNotesLink>
       <pubDate>Mon, 24 Jan 2026 10:29:03 +0000</pubDate>
       <enclosure
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v2.0.0/jotto.dmg"
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v2.1.0/jotto.dmg"
         sparkle:edSignature="Ewq1OUbrzZbPowJy9LF3WJxMzt67giK5DZCcvIhdOqm/0gofcz3CwZ/Ofg1ImgUiBLQTZEvkK+kxJE4J+LKMCA=="
         sparkle:minimumSystemVersion="13.0"
-        length="41787325"
+        length="56299520"
         type="application/octet-stream"/>
-      <sparkle:version>1117</sparkle:version>
-      <sparkle:shortVersionString>2.0.0</sparkle:shortVersionString>
+      <sparkle:version>210</sparkle:version>
+      <sparkle:shortVersionString>2.1.0</sparkle:shortVersionString>
     </item>
   </channel>
 </rss>
