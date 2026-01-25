@@ -1,6 +1,6 @@
 "use client"
 
-import { Download, ArrowDown } from "lucide-react"
+import { Download, Sparkles, CheckCircle2, Mic, Calendar, Brain, ArrowRight, Users, Code, Megaphone } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { track } from "@vercel/analytics"
@@ -15,52 +15,33 @@ declare global {
 }
 
 export default function JottoLandingEN() {
-  // 컴포넌트 마운트 시 GA4 상태 확인
   useEffect(() => {
     const checkGA4Status = () => {
-      console.log("🔍 GA4 Final Status (EN):")
-      console.log("- window.gtag:", typeof window.gtag)
-      console.log("- window.dataLayer:", Array.isArray(window.dataLayer))
-
       if (window.gtag) {
         window.gtag("event", "page_loaded_test_en", {
           event_category: "test",
           event_label: "page_load_en",
         })
-        console.log("✅ Test GA4 event sent (EN)")
       }
     }
-
     setTimeout(checkGA4Status, 3000)
   }, [])
 
-  // 새로운 GA4 이벤트 전송 함수
   const sendGA4Event = (eventName: string, parameters: any = {}) => {
-    console.log(`🎯 GA4 Event (EN): ${eventName}`)
-
     if (typeof window !== "undefined" && window.gtag) {
       try {
         window.gtag("event", eventName, {
           ...parameters,
           send_to: "G-QLXF3L16ME",
         })
-        console.log(`✅ GA4 SUCCESS (EN): ${eventName}`, parameters)
       } catch (error) {
-        console.error(`❌ GA4 ERROR (EN): ${eventName}`, error)
+        console.error(`GA4 ERROR (EN): ${eventName}`, error)
       }
-    } else {
-      console.warn(`❌ GA4 NOT READY (EN): ${eventName}`)
     }
   }
 
   const handleMacDownload = () => {
-    console.log("🖱️ Mac download button clicked (EN)")
-
-    // Vercel Analytics
     track("download_mac_hero_en")
-    console.log("📊 Vercel Analytics: download_mac_hero_en")
-
-    // GA4
     sendGA4Event("download_click", {
       event_category: "download",
       event_label: "mac_hero_en",
@@ -69,13 +50,7 @@ export default function JottoLandingEN() {
   }
 
   const handleWindowsWaitlist = () => {
-    console.log("🖱️ Windows waitlist button clicked (EN)")
-
-    // Vercel Analytics
     track("join_windows_waitlist_en")
-    console.log("📊 Vercel Analytics: join_windows_waitlist_en")
-
-    // GA4
     sendGA4Event("waitlist_join", {
       event_category: "waitlist",
       event_label: "windows_hero_en",
@@ -84,23 +59,27 @@ export default function JottoLandingEN() {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-slate-100">
+    <div className="min-h-screen bg-slate-950 text-white overflow-x-hidden">
       {/* Header */}
-      <header className="border-b border-slate-200/60 bg-white/80 backdrop-blur-sm sticky top-0 z-50">
+      <header className="fixed top-0 left-0 right-0 z-50 glass">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="w-8 h-8 rounded-lg overflow-hidden">
+              <div className="w-9 h-9 rounded-xl overflow-hidden ring-2 ring-white/10">
                 <img src="/jotto-icon.png" alt="Jotto" className="w-full h-full object-cover" />
               </div>
-              <span className="font-semibold text-xl text-slate-900">Jotto</span>
+              <span className="font-bold text-xl">Jotto</span>
+              <span className="hidden sm:inline-flex items-center gap-1 px-2 py-1 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full text-xs text-blue-300 border border-blue-500/30">
+                <Sparkles className="w-3 h-3" />
+                AI Powered
+              </span>
             </div>
-            <div className="flex items-center gap-4">
-              <Link href="/" className="text-sm text-slate-600 hover:text-slate-900">
+            <div className="flex items-center gap-6">
+              <Link href="/" className="text-sm text-slate-400 hover:text-white transition-colors">
                 한국어
               </Link>
               <a href="/api/download" onClick={handleMacDownload}>
-                <Button className="bg-slate-900 hover:bg-slate-800 text-white">
+                <Button className="bg-gradient-to-r from-blue-500 to-purple-500 hover:from-blue-600 hover:to-purple-600 text-white border-0 shadow-lg shadow-purple-500/25">
                   <Download className="w-4 h-4 mr-2" />
                   Download
                 </Button>
@@ -111,229 +90,315 @@ export default function JottoLandingEN() {
       </header>
 
       {/* Hero Section */}
-      <section className="relative py-20 px-6 overflow-hidden">
-        {/* Animated Background */}
-        <div className="absolute inset-0 -z-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-slate-50 via-white to-slate-100"></div>
-          <div className="absolute top-0 left-0 w-full h-full">
-            <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-gradient-to-r from-blue-400/20 to-purple-500/20 rounded-full blur-3xl animate-pulse"></div>
-            <div className="absolute top-1/3 right-1/4 w-80 h-80 bg-gradient-to-r from-purple-400/20 to-pink-500/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
-            <div className="absolute bottom-1/4 left-1/3 w-72 h-72 bg-gradient-to-r from-cyan-400/20 to-blue-500/20 rounded-full blur-3xl animate-pulse delay-2000"></div>
-          </div>
+      <section className="relative min-h-screen flex items-center pt-20 pb-12 px-6">
+        {/* Aurora Background */}
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 -left-1/4 w-[600px] h-[600px] bg-blue-500/30 rounded-full blur-[120px] animate-aurora"></div>
+          <div className="absolute top-1/3 right-0 w-[500px] h-[500px] bg-purple-500/30 rounded-full blur-[120px] animate-aurora" style={{ animationDelay: '-5s' }}></div>
+          <div className="absolute bottom-0 left-1/3 w-[400px] h-[400px] bg-pink-500/20 rounded-full blur-[120px] animate-aurora" style={{ animationDelay: '-10s' }}></div>
         </div>
 
-        <div className="container mx-auto max-w-4xl text-center relative z-10">
-          <h1 className="text-5xl md:text-6xl font-bold text-slate-900 mb-6 leading-tight">
-            Clear your mind,
-            <br />
-            <span className="bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-              save your thoughts
-            </span>
-          </h1>
-          <p className="text-xl text-slate-600 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Just press one shortcut anywhere in Slack, Chrome, or Notion
-            <br />
-            From scheduling to memo organization becomes easy and convenient
-          </p>
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-12 items-center">
+            {/* Left: Text Content */}
+            <div className="text-center lg:text-left">
+              <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-8">
+                <Sparkles className="w-4 h-4 text-purple-400" />
+                <span className="text-sm text-slate-300">AI organizes everything for you</span>
+              </div>
+              
+              <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                <span className="text-white">Just drag</span>
+                <br />
+                <span className="text-gradient">AI handles</span>
+                <br />
+                <span className="text-gradient">the rest</span>
+              </h1>
+              
+              <p className="text-xl text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
+                From Slack, Notion, email, or any website
+                <br />
+                Just drag and AI automatically saves it as <span className="text-white font-medium">tasks</span>, <span className="text-white font-medium">events</span>, or <span className="text-white font-medium">notes</span>
+              </p>
 
-          {/* Download Buttons */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-8">
-            <a href="/api/download" onClick={handleMacDownload}>
-              <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-slate-900/90 backdrop-blur-sm border border-slate-700/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-slate-900">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-5 h-5 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-white">
-                      <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.81.87.78 0 2.26-1.07 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
-                    </svg>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-sm font-medium text-white">Download for Mac</div>
-                  </div>
-                </div>
-              </button>
-            </a>
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                <a href="/api/download" onClick={handleMacDownload}>
+                  <button className="group relative inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-500 to-purple-500 rounded-2xl font-semibold text-lg shadow-2xl shadow-purple-500/30 hover:shadow-purple-500/50 transition-all duration-300 hover:scale-105">
+                    <div className="absolute inset-0 bg-gradient-to-r from-blue-400 to-purple-400 rounded-2xl blur opacity-50 group-hover:opacity-75 transition-opacity"></div>
+                    <div className="relative flex items-center gap-3">
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
+                        <path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.81-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11z" />
+                      </svg>
+                      <span>Start free on Mac</span>
+                    </div>
+                  </button>
+                </a>
 
-            <a
-              href="https://tally.so/r/mY6BJJ"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={handleWindowsWaitlist}
-            >
-              <button className="group relative inline-flex items-center justify-center px-6 py-3 bg-white/90 backdrop-blur-sm border border-slate-200/50 rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 hover:bg-white">
-                <div className="flex items-center gap-2.5">
-                  <div className="w-5 h-5 flex items-center justify-center">
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 fill-slate-800">
-                      <path d="M0 0h11v11H0zm13 0h11v11H13zM0 13h11v11H0zm13 0h11v11H13z" />
-                    </svg>
-                  </div>
-                  <div className="text-left">
-                    <div className="text-sm font-medium text-slate-800">Join Windows waitlist</div>
-                  </div>
+                <a
+                  href="https://tally.so/r/mY6BJJ"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  onClick={handleWindowsWaitlist}
+                >
+                  <button className="group inline-flex items-center justify-center px-8 py-4 bg-white/5 border border-white/20 rounded-2xl font-semibold text-lg hover:bg-white/10 hover:border-white/30 transition-all duration-300">
+                    <div className="flex items-center gap-3">
+                      <svg viewBox="0 0 24 24" className="w-5 h-5 fill-white">
+                        <path d="M0 0h11v11H0zm13 0h11v11H13zM0 13h11v11H0zm13 0h11v11H13z" />
+                      </svg>
+                      <span>Join Windows waitlist</span>
+                      <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                    </div>
+                  </button>
+                </a>
+              </div>
+
+              <p className="text-sm text-slate-500 mt-6">macOS 12+ | Free download</p>
+            </div>
+
+            {/* Right: Hero Video */}
+            <div className="relative">
+              <div className="relative group">
+                {/* Glow effect */}
+                <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-glow-pulse"></div>
+                
+                {/* Video container */}
+                <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+                  <video 
+                    className="w-full rounded-xl shadow-2xl" 
+                    autoPlay 
+                    loop 
+                    muted 
+                    playsInline 
+                    preload="auto"
+                  >
+                    <source src="/calendarAI.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
                 </div>
-              </button>
-            </a>
+              </div>
+            </div>
           </div>
+        </div>
+      </section>
 
-          {/* Hero Video */}
-          <div className="mb-6 flex justify-center">
+      {/* Feature 1: Capture AI */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
+        
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Video */}
             <div className="relative group">
-              <div className="absolute -inset-1 bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-40 transition duration-1000"></div>
-              <div className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-4 shadow-xl border border-white/20">
-                <video className="w-full max-w-2xl rounded-xl shadow-lg" autoPlay loop muted playsInline preload="auto">
-                  <source
-                    src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-hero1-Yje0Vk1QhaIWuqEnnqdRP5kkkNffeG.mp4"
-                    type="video/mp4"
-                  />
-                  Your browser does not support the video tag.
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+                <video 
+                  className="w-full rounded-xl shadow-2xl" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="/captureAI.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
+            {/* Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 rounded-full border border-blue-500/30 mb-6">
+                <CheckCircle2 className="w-4 h-4 text-blue-400" />
+                <span className="text-sm text-blue-300">Smart Task Management</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Got a request?
+                <br />
+                <span className="text-gradient">AI turns it into a task</span>
+              </h2>
+              
+              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+                From Slack, Discord, or email
+                <br />
+                Just drag and AI understands the context
+                <br />
+                and automatically adds it to your task list
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
+                    <Brain className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">Context-aware AI</div>
+                    <div className="text-sm text-slate-400">Understands conversations and auto-categorizes</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-green-500 to-emerald-500 rounded-xl flex items-center justify-center">
+                    <CheckCircle2 className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">One-click task creation</div>
+                    <div className="text-sm text-slate-400">Just one drag is all it takes</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Feature 2: Meeting AI */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950"></div>
+        
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Text */}
+            <div className="lg:order-1">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 rounded-full border border-purple-500/30 mb-6">
+                <Mic className="w-4 h-4 text-purple-400" />
+                <span className="text-sm text-purple-300">Meeting AI</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Focus on the meeting,
+                <br />
+                <span className="text-gradient">AI takes the notes</span>
+              </h2>
+              
+              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+                Record your meetings and AI automatically summarizes
+                <br />
+                and suggests follow-up events and tasks
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
+                    <Mic className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">One-click recording</div>
+                    <div className="text-sm text-slate-400">Start meeting recording with one button</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-violet-500 to-purple-500 rounded-xl flex items-center justify-center">
+                    <Sparkles className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">AI auto-summary</div>
+                    <div className="text-sm text-slate-400">Key points neatly organized</div>
+                  </div>
+                </div>
+                
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-12 h-12 bg-gradient-to-br from-pink-500 to-rose-500 rounded-xl flex items-center justify-center">
+                    <Calendar className="w-6 h-6 text-white" />
+                  </div>
+                  <div>
+                    <div className="font-semibold text-white">Smart event suggestions</div>
+                    <div className="text-sm text-slate-400">Auto-suggest follow-ups and deadlines</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Video */}
+            <div className="lg:order-2 relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+                <video 
+                  className="w-full rounded-xl shadow-2xl" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="/meeting_jotto.mp4" type="video/mp4" />
                 </video>
               </div>
             </div>
           </div>
-
-          <div className="text-sm text-slate-500">macOS 12+ | Free Download</div>
         </div>
       </section>
 
-      {/* How It Works */}
-      <section className="py-24 px-6 bg-white relative overflow-hidden">
-        {/* Background decoration */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-slate-50/30 to-white"></div>
-
-        <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="text-center mb-20">
-            <h2 className="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Simple Workflow</h2>
-            <p className="text-xl text-slate-600 max-w-2xl mx-auto">
-              Save and organize in just two steps, no complex setup required
-            </p>
+      {/* Use Cases Section */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Who uses <span className="text-gradient">Jotto</span>?
+            </h2>
+            <p className="text-xl text-slate-400">Let AI handle your daily organizing tasks</p>
           </div>
 
-          <div className="space-y-32">
-            {/* Step 1 */}
-            <div className="relative">
-              {/* Step indicator */}
-              <div className="flex items-center justify-center mb-12">
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 bg-blue-500 rounded-full"></div>
-                  <div className="text-sm font-medium text-blue-600 uppercase tracking-wider">Step 01</div>
-                  <div className="w-16 h-px bg-gradient-to-r from-blue-500 to-transparent"></div>
-                </div>
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* PM */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/25">
+                <Users className="w-7 h-7 text-white" />
               </div>
-
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="lg:order-1">
-                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
-                    Drag anywhere
-                    <br />
-                    <span className="bg-gradient-to-r from-blue-600 to-cyan-600 bg-clip-text text-transparent">
-                      you want
-                    </span>
-                  </h3>
-                  <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-                    <p>
-                      From Slack, Discord, Chrome, anywhere you want
-                      <br />
-                      Just drag and press the shortcut once to save conversations or text as is.
-                    </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-blue-50 rounded-full">
-                      <span className="text-blue-700 font-semibold">Clear your mind and leave memories to Jotto</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="lg:order-2">
-                  <div className="relative group">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-blue-500/20 to-cyan-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                    <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
-                      <video className="w-full rounded-xl shadow-lg" autoPlay loop muted playsInline>
-                        <source
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-everywhere-edit-bqBaYl0uUA3DcRaUuARDImRoJyQ70o.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Product Managers</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "I never miss action items from meetings anymore. AI organizes them into tasks for me"
+              </p>
             </div>
 
-            {/* Connection line */}
-            <div className="flex justify-center">
-              <div className="flex flex-col items-center gap-4">
-                <ArrowDown className="w-6 h-6 text-slate-400 animate-bounce" />
-                <div className="w-px h-16 bg-gradient-to-b from-slate-300 to-transparent"></div>
+            {/* Developer */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
+                <Code className="w-7 h-7 text-white" />
               </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Developers</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "I convert code review feedback into tasks instantly. Never miss a Slack notification"
+              </p>
             </div>
 
-            {/* Step 2 */}
-            <div className="relative">
-              {/* Step indicator */}
-              <div className="flex items-center justify-center mb-12">
-                <div className="flex items-center gap-4">
-                  <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                  <div className="text-sm font-medium text-purple-600 uppercase tracking-wider">Step 02</div>
-                  <div className="w-16 h-px bg-gradient-to-r from-purple-500 to-transparent"></div>
-                </div>
+            {/* Marketer */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/25">
+                <Megaphone className="w-7 h-7 text-white" />
               </div>
-
-              <div className="grid lg:grid-cols-2 gap-16 items-center">
-                <div className="lg:order-2">
-                  <h3 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
-                    When you have time
-                    <br />
-                    <span className="bg-gradient-to-r from-purple-600 to-pink-600 bg-clip-text text-transparent">
-                      organize it
-                    </span>
-                  </h3>
-                  <div className="space-y-4 text-lg text-slate-600 leading-relaxed">
-                    <p>
-                      Look at the saved context and organize into To-dos, Calendar, and Memos
-                      <br />
-                      all at once
-                    </p>
-                    <div className="inline-flex items-center gap-2 px-4 py-2 bg-purple-50 rounded-full">
-                      <span className="text-purple-700 font-semibold">Fast, easy, and convenient</span>
-                    </div>
-                  </div>
-                </div>
-
-                <div className="lg:order-1">
-                  <div className="relative group">
-                    <div className="absolute -inset-4 bg-gradient-to-r from-purple-500/20 to-pink-500/20 rounded-3xl blur-2xl opacity-60 group-hover:opacity-80 transition-opacity duration-500"></div>
-                    <div className="relative bg-white/90 backdrop-blur-sm rounded-2xl p-6 shadow-2xl border border-white/50">
-                      <video className="w-full rounded-xl shadow-lg" autoPlay loop muted playsInline>
-                        <source
-                          src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/jotto-guide-draginjotto-edit-eFpJ8nR3KxsUs0XXF97J5YFpTRffOE.mp4"
-                          type="video/mp4"
-                        />
-                        Your browser does not support the video tag.
-                      </video>
-                    </div>
-                  </div>
-                </div>
-              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Marketers</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "I add Slack requests directly to my calendar. Managing deadlines has never been easier"
+              </p>
             </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 px-6 bg-gradient-to-r from-slate-900 to-slate-800">
-        <div className="container mx-auto max-w-4xl text-center">
-          <h2 className="text-4xl font-bold text-white mb-6">Ready to clear your mind?</h2>
-          <p className="text-xl text-slate-300 mb-8 max-w-2xl mx-auto">
-            Join thousands of users who are already getting smarter with Jotto.
+      <section className="relative py-32 px-6 overflow-hidden">
+        {/* Background gradient */}
+        <div className="absolute inset-0 bg-gradient-to-br from-blue-600/20 via-purple-600/20 to-pink-600/20"></div>
+        <div className="absolute inset-0">
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-[120px]"></div>
+        </div>
+
+        <div className="container mx-auto max-w-4xl text-center relative z-10">
+          <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+            Stop storing everything
+            <br />
+            <span className="text-gradient">in your head</span>
+          </h2>
+          <p className="text-xl text-slate-400 mb-10 max-w-2xl mx-auto">
+            Start using Jotto today and let AI handle the organizing
           </p>
+          
           <a
             href="/api/download"
             onClick={() => {
-              console.log("🖱️ Mac download CTA button clicked (EN)")
-
-              // Vercel Analytics
               track("download_mac_cta_en")
-              console.log("📊 Vercel Analytics: download_mac_cta_en")
-
-              // GA4
               sendGA4Event("download_click", {
                 event_category: "download",
                 event_label: "mac_cta_en",
@@ -341,16 +406,20 @@ export default function JottoLandingEN() {
               })
             }}
           >
-            <Button size="lg" className="bg-white text-slate-900 hover:bg-slate-100 px-8 py-3">
-              <Download className="w-5 h-5 mr-2" />
-              Download Jotto
-            </Button>
+            <button className="group relative inline-flex items-center justify-center px-10 py-5 bg-white rounded-2xl font-bold text-xl text-slate-900 shadow-2xl shadow-white/20 hover:shadow-white/40 transition-all duration-300 hover:scale-105">
+              <div className="flex items-center gap-3">
+                <Download className="w-6 h-6" />
+                <span>Download Jotto for free</span>
+              </div>
+            </button>
           </a>
+          
+          <p className="text-sm text-slate-500 mt-6">macOS 12+ | Ready to use after install</p>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="py-12 px-6 bg-slate-50 border-t border-slate-200">
+      <footer className="py-12 px-6 border-t border-white/10">
         <div className="container mx-auto max-w-5xl">
           <div className="flex flex-col items-center gap-6">
             <div className="flex items-center gap-3">
@@ -358,19 +427,19 @@ export default function JottoLandingEN() {
                 <img src="/jotto-icon.png" alt="Jotto" className="w-full h-full object-cover" />
               </div>
               <div>
-                <div className="font-semibold text-slate-900">Jotto</div>
-                <div className="text-sm text-slate-600">macOS productivity tool</div>
+                <div className="font-semibold text-white">Jotto</div>
+                <div className="text-sm text-slate-500">AI-powered macOS productivity tool</div>
               </div>
             </div>
           </div>
-          <div className="mt-8 pt-8 border-t border-slate-200 text-center">
+          <div className="mt-8 pt-8 border-t border-white/10 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. All rights reserved. • Contact: contact@jotto.in •
-              <a href="/en/privacy" className="hover:text-slate-700 ml-1">
+              © 2025 Jotto. All rights reserved. • Contact: contact@jotto.in •{" "}
+              <a href="/en/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>
               {" • "}
-              <a href="/en/terms" className="hover:text-slate-700">
+              <a href="/en/terms" className="hover:text-white transition-colors">
                 Terms of Service
               </a>
             </p>
