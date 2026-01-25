@@ -6,18 +6,18 @@
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
     <item>
-      <title>Version 2.2.0</title>
-      <description>Jotto 2.2.0 업데이트: 버전 2.2 업데이트</description>
-      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v2.2.0</sparkle:releaseNotesLink>
+      <title>Version 2.2.2</title>
+      <description>Jotto 2.2.2 업데이트: 버전 2.2.2 업데이트</description>
+      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v2.2.2</sparkle:releaseNotesLink>
       <pubDate>Mon, 24 Jan 2026 13:22:03 +0000</pubDate>
       <enclosure
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v2.2.0/jotto.dmg"
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v2.2.2/jotto.dmg"
         sparkle:edSignature="Ewq1OUbrzZbPowJy9LF3WJxMzt67giK5DZCcvIhdOqm/0gofcz3CwZ/Ofg1ImgUiBLQTZEvkK+kxJE4J+LKMCA=="
         sparkle:minimumSystemVersion="13.0"
-        length="41873249"
+        length="57354738"
         type="application/octet-stream"/>
-      <sparkle:version>220</sparkle:version>
-      <sparkle:shortVersionString>2.2.0</sparkle:shortVersionString>
+      <sparkle:version>222</sparkle:version>
+      <sparkle:shortVersionString>2.2.2</sparkle:shortVersionString>
     </item>
   </channel>
 </rss>
