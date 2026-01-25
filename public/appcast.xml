@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:sparkle="http://www.andymatuschak.org/xml-namespaces/sparkle" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Jotto Appcast</title>
+    <link>https://www.jotto.in/appcast.xml</link>
+    <description>Jotto macOS App Updates</description>
+    <language>ko</language>
+    <item>
+      <title>Version 2.6.0</title>
+      <description>Jotto 2.6.0 업데이트: 랜딩 페이지 및 Paddle 결제 연동</description>
+      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v2.6.0</sparkle:releaseNotesLink>
+      <pubDate>Sat, 25 Jan 2026 00:00:00 +0000</pubDate>
+      <enclosure
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v2.6.0/jotto.dmg"
+        sparkle:edSignature=""
+        sparkle:minimumSystemVersion="13.0"
+        length="0"
+        type="application/octet-stream"/>
+      <sparkle:version>260</sparkle:version>
+      <sparkle:shortVersionString>2.6.0</sparkle:shortVersionString>
+    </item>
+  </channel>
+</rss>
