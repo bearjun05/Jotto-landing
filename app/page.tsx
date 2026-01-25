@@ -98,6 +98,9 @@ export default function JottoLanding() {
               <span className="font-semibold text-xl text-slate-900">Jotto</span>
             </div>
             <div className="flex items-center gap-4">
+              <Link href="/pricing" className="text-sm text-slate-600 hover:text-slate-900 font-medium">
+                가격
+              </Link>
               <Link href="/en" className="text-sm text-slate-600 hover:text-slate-900">
                 English
               </Link>

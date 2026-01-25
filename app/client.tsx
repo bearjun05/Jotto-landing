@@ -4,6 +4,7 @@ import type React from "react"
 import { Inter } from "next/font/google"
 import { Analytics } from "@vercel/analytics/react"
 import { Suspense } from "react"
+import { PaddleProvider } from "@/components/providers/paddle-provider"
 import "./globals.css"
 
 const inter = Inter({ subsets: ["latin"] })
@@ -19,7 +20,9 @@ function ClientContent({ children }: { children: React.ReactNode }) {
         <link rel="mask-icon" href="/safari-pinned-tab.png" color="#000000" />
       </head>
       <body className={inter.className}>
-        {children}
+        <PaddleProvider>
+          {children}
+        </PaddleProvider>
         <Analytics />
       </body>
     </html>
