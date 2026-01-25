@@ -1,0 +1,22 @@
+{
+  "name": "Jotto",
+  "short_name": "Jotto",
+  "description": "머릿속을 비우고, 생각을 저장하세요",
+  "icons": [
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png"
+    }
+  ],
+  "theme_color": "#ffffff",
+  "background_color": "#ffffff",
+  "display": "standalone",
+  "start_url": "/",
+  "lang": "ko"
+}

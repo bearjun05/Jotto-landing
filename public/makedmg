@@ -1,0 +1,11 @@
+cd "/Users/uj.choe/Downloads" && \
+rm -f "jotto.dmg" && \
+/opt/homebrew/bin/create-dmg \
+  --volname "Jotto" \
+  --window-pos 200 120 \
+  --window-size 600 400 \
+  --icon-size 120 \
+  --icon "jotto.app" 150 150 \
+  --app-drop-link 450 150 \
+  "jotto.dmg" \
+  "jotto.app"
