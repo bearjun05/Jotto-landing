@@ -153,7 +153,7 @@ export default function JottoLandingEN() {
                 </a>
               </div>
 
-              <p className="text-sm text-slate-500 mt-6">macOS 12+ | Free download</p>
+              <p className="text-sm text-slate-500 mt-6">macOS 12+ | Apple Silicon (M1/M2/M3/M4) | Free</p>
             </div>
 
             {/* Right: Hero Video */}
@@ -414,7 +414,7 @@ export default function JottoLandingEN() {
             </button>
           </a>
           
-          <p className="text-sm text-slate-500 mt-6">macOS 12+ | Ready to use after install</p>
+          <p className="text-sm text-slate-500 mt-6">macOS 12+ | Apple Silicon (M1/M2/M3/M4) only</p>
         </div>
       </section>
 
