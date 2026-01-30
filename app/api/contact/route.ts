@@ -6,12 +6,12 @@ const TELEGRAM_CHAT_ID = process.env.TELEGRAM_CHAT_ID;
 export async function POST(request: NextRequest) {
   try {
     const body = await request.json();
-    const { contactType, subject, message, appVersion, buildNumber, systemVersion } = body;
+    const { email, contactType, subject, message, appVersion, buildNumber, systemVersion } = body;
 
     // Validate required fields
-    if (!subject || !message) {
+    if (!email || !subject || !message) {
       return NextResponse.json(
-        { error: 'Subject and message are required' },
+        { error: 'Email, subject and message are required' },
         { status: 400 }
       );
     }
@@ -20,6 +20,7 @@ export async function POST(request: NextRequest) {
     const telegramMessage = `
 🔔 *Jotto 앱 문의*
 
+✉️ *보낸 사람:* ${email}
 📌 *유형:* ${contactType}
 📝 *제목:* ${subject}
 
