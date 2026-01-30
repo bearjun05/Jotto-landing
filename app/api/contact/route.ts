@@ -18,18 +18,18 @@ export async function POST(request: NextRequest) {
 
     // Format message for Telegram
     const telegramMessage = `
-🔔 *Jotto 앱 문의*
+*[Jotto 앱 문의]*
 
-✉️ *보낸 사람:* ${email}
-📌 *유형:* ${contactType}
-📝 *제목:* ${subject}
+*보낸 사람:* ${email}
+*유형:* ${contactType}
+*제목:* ${subject}
 
-💬 *내용:*
+*내용:*
 ${message}
 
 ───────────────
-📱 App: ${appVersion} (${buildNumber})
-💻 macOS: ${systemVersion}
+App: ${appVersion} (${buildNumber})
+macOS: ${systemVersion}
 `.trim();
 
     // Send to Telegram
