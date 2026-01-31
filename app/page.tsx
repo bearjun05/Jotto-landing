@@ -1,6 +1,6 @@
 "use client"
 
-import { Download, Sparkles, CheckCircle2, Mic, Calendar, Brain, ArrowRight, Users, Code, Megaphone } from "lucide-react"
+import { Download, Sparkles, CheckCircle2, Mic, Calendar, Brain, ArrowRight, Users, Code, Megaphone, Shield, HardDrive } from "lucide-react"
 import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { track } from "@vercel/analytics"
@@ -372,6 +372,171 @@ export default function JottoLanding() {
               <p className="text-slate-400 leading-relaxed">
                 "슬랙에서 받은 요청을 캘린더로 바로 등록해요. 마감일 관리가 쉬워졌어요"
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Privacy & Security Section */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-900"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-1/4 left-0 w-[500px] h-[500px] bg-emerald-500/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-1/4 right-0 w-[400px] h-[400px] bg-teal-500/10 rounded-full blur-[120px]"></div>
+        </div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-emerald-500/10 rounded-full border border-emerald-500/30 mb-6">
+              <Shield className="w-4 h-4 text-emerald-400" />
+              <span className="text-sm text-emerald-300">완벽한 프라이버시</span>
+            </div>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              당신의 생각은{" "}
+              <span className="text-gradient">당신만의 것</span>
+            </h2>
+            <p className="text-xl text-slate-400 max-w-2xl mx-auto">
+              모든 데이터는 오직 당신의 기기에서만 처리됩니다
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            {/* Local Storage */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-emerald-500/50 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-emerald-500 to-teal-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-emerald-500/25">
+                <HardDrive className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">로컬 스토리지</h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                모든 메모, 할 일, 개인 데이터가{" "}
+                <span className="text-emerald-400 font-medium">오직 당신의 기기에만</span> 저장됩니다.
+                서버로 전송되는 데이터가 없습니다.
+              </p>
+              <div className="flex items-center gap-2 text-emerald-400 text-sm font-medium">
+                <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
+                클라우드 업로드 없음
+              </div>
+            </div>
+
+            {/* Local Speech Recognition */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-teal-500/50 transition-all duration-300">
+              <div className="w-14 h-14 bg-gradient-to-br from-teal-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-teal-500/25">
+                <Mic className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold mb-4 text-white">로컬 음성인식</h3>
+              <p className="text-slate-400 leading-relaxed mb-6">
+                음성인식 AI 모델이{" "}
+                <span className="text-teal-400 font-medium">기기 내에서 직접 실행</span>됩니다.
+                음성 데이터가 외부로 전송되지 않습니다.
+              </p>
+              <div className="flex items-center gap-2 text-teal-400 text-sm font-medium">
+                <div className="w-2 h-2 bg-teal-400 rounded-full animate-pulse"></div>
+                100% 오프라인 처리
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* Google Calendar Section */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950"></div>
+        <div className="absolute inset-0 overflow-hidden">
+          <div className="absolute top-0 right-1/4 w-[500px] h-[500px] bg-blue-500/10 rounded-full blur-[120px]"></div>
+          <div className="absolute bottom-0 left-1/4 w-[400px] h-[400px] bg-indigo-500/10 rounded-full blur-[120px]"></div>
+        </div>
+        
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="grid lg:grid-cols-2 gap-16 items-center">
+            {/* Text */}
+            <div>
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 rounded-full border border-blue-500/30 mb-6">
+                <Calendar className="w-4 h-4 text-blue-400" />
+                <span className="text-sm text-blue-300">캘린더 연동</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                구글 캘린더와
+                <br />
+                <span className="text-gradient">완벽 연동</span>
+              </h2>
+              
+              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+                저장한 내용을 바로 구글 캘린더에 일정으로 추가하세요
+                <br />
+                캘린더 확인도 Jotto에서 한눈에 가능합니다
+              </p>
+
+              <div className="space-y-4">
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <span className="text-slate-300">양방향 실시간 동기화</span>
+                </div>
+                
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <span className="text-slate-300">드래그한 내용에서 일정 자동 추출</span>
+                </div>
+                
+                <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
+                  <div className="w-10 h-10 bg-blue-500/20 rounded-lg flex items-center justify-center">
+                    <CheckCircle2 className="w-5 h-5 text-blue-400" />
+                  </div>
+                  <span className="text-slate-300">오늘/이번 주 일정 빠른 확인</span>
+                </div>
+              </div>
+            </div>
+
+            {/* Calendar Preview Card */}
+            <div className="relative group">
+              <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-indigo-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-6 border border-white/10">
+                <div className="bg-slate-800/50 rounded-xl p-6 space-y-4">
+                  <div className="flex items-center justify-between pb-4 border-b border-white/10">
+                    <div className="flex items-center gap-3">
+                      <Calendar className="w-5 h-5 text-blue-400" />
+                      <span className="font-semibold text-white">오늘의 일정</span>
+                    </div>
+                    <div className="flex items-center gap-2 px-3 py-1 bg-white/5 rounded-full">
+                      <div className="w-4 h-4 rounded-sm bg-gradient-to-br from-blue-500 to-blue-600 flex items-center justify-center">
+                        <span className="text-[8px] font-bold text-white">G</span>
+                      </div>
+                      <span className="text-xs text-slate-400">연동됨</span>
+                    </div>
+                  </div>
+                  
+                  <div className="space-y-3">
+                    <div className="flex items-center gap-4 p-3 bg-blue-500/10 rounded-lg border border-blue-500/20">
+                      <div className="w-1 h-12 bg-blue-500 rounded-full"></div>
+                      <div className="flex-1">
+                        <div className="font-medium text-white">팀 미팅</div>
+                        <div className="text-sm text-slate-400">오전 10:00 - 11:00</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 p-3 bg-emerald-500/10 rounded-lg border border-emerald-500/20">
+                      <div className="w-1 h-12 bg-emerald-500 rounded-full"></div>
+                      <div className="flex-1">
+                        <div className="font-medium text-white">프로젝트 리뷰</div>
+                        <div className="text-sm text-slate-400">오후 2:00 - 3:00</div>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-center gap-4 p-3 bg-purple-500/10 rounded-lg border border-purple-500/20">
+                      <div className="w-1 h-12 bg-purple-500 rounded-full"></div>
+                      <div className="flex-1">
+                        <div className="font-medium text-white">1:1 미팅</div>
+                        <div className="text-sm text-slate-400">오후 4:30 - 5:00</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
         </div>
