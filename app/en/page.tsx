@@ -99,9 +99,9 @@ export default function JottoLandingEN() {
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text Content */}
-            <div className="text-center lg:text-left">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Title - mobile first */}
+            <div className="order-1 lg:order-1 text-center lg:text-left w-full">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-purple-400" />
                 <span className="text-sm text-slate-300">AI organizes everything for you</span>
@@ -114,7 +114,10 @@ export default function JottoLandingEN() {
                 <br />
                 <span className="text-gradient">the rest</span>
               </h1>
-              
+            </div>
+
+            {/* Description & CTA - mobile second */}
+            <div className="order-2 lg:order-3 text-center lg:text-left w-full">
               <p className="text-xl text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 From Slack, Notion, email, or any website
                 <br />
@@ -156,8 +159,8 @@ export default function JottoLandingEN() {
               <p className="text-sm text-slate-500 mt-6">macOS 12+ | Apple Silicon (M1/M2/M3/M4) | Free</p>
             </div>
 
-            {/* Right: Hero Video */}
-            <div className="relative">
+            {/* Video - mobile third */}
+            <div className="order-3 lg:order-2 lg:row-span-2 relative w-full">
               <div className="relative group">
                 {/* Glow effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-glow-pulse"></div>
@@ -187,9 +190,31 @@ export default function JottoLandingEN() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Video */}
-            <div className="relative group">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Title + Description - mobile first */}
+            <div className="order-1 lg:order-2 w-full">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 rounded-full border border-blue-500/30 mb-6">
+                <CheckCircle2 className="w-4 h-4 text-blue-400" />
+                <span className="text-sm text-blue-300">Smart Task Management</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                Got a request?
+                <br />
+                <span className="text-gradient">AI turns it into a task</span>
+              </h2>
+
+              <p className="text-xl text-slate-400 leading-relaxed">
+                From Slack, Discord, or email
+                <br />
+                Just drag and AI understands the context
+                <br />
+                and automatically adds it to your task list
+              </p>
+            </div>
+
+            {/* Video - mobile second */}
+            <div className="order-2 lg:order-1 lg:row-span-2 relative group w-full">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
                 <video 
@@ -204,27 +229,8 @@ export default function JottoLandingEN() {
               </div>
             </div>
 
-            {/* Text */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 rounded-full border border-blue-500/30 mb-6">
-                <CheckCircle2 className="w-4 h-4 text-blue-400" />
-                <span className="text-sm text-blue-300">Smart Task Management</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                Got a request?
-                <br />
-                <span className="text-gradient">AI turns it into a task</span>
-              </h2>
-              
-              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-                From Slack, Discord, or email
-                <br />
-                Just drag and AI understands the context
-                <br />
-                and automatically adds it to your task list
-              </p>
-
+            {/* Features - mobile third */}
+            <div className="order-3 lg:order-3 w-full">
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
@@ -256,9 +262,9 @@ export default function JottoLandingEN() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950"></div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Text */}
-            <div className="lg:order-1">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Title + Description - mobile first */}
+            <div className="order-1 lg:order-1 w-full">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 rounded-full border border-purple-500/30 mb-6">
                 <Mic className="w-4 h-4 text-purple-400" />
                 <span className="text-sm text-purple-300">Meeting AI</span>
@@ -269,13 +275,32 @@ export default function JottoLandingEN() {
                 <br />
                 <span className="text-gradient">AI takes the notes</span>
               </h2>
-              
-              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+
+              <p className="text-xl text-slate-400 leading-relaxed">
                 Record your meetings and AI automatically summarizes
                 <br />
                 and suggests follow-up events and tasks
               </p>
+            </div>
 
+            {/* Video - mobile second */}
+            <div className="order-2 lg:order-2 lg:row-span-2 relative group w-full">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+                <video 
+                  className="w-full rounded-xl shadow-2xl" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="/meeting_jotto.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
+            {/* Features - mobile third */}
+            <div className="order-3 lg:order-3 w-full">
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
@@ -307,71 +332,6 @@ export default function JottoLandingEN() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Video */}
-            <div className="lg:order-2 relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
-                <video 
-                  className="w-full rounded-xl shadow-2xl" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                >
-                  <source src="/meeting_jotto.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="relative py-32 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
-        
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              Who uses <span className="text-gradient">Jotto</span>?
-            </h2>
-            <p className="text-xl text-slate-400">Let AI handle your daily organizing tasks</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* PM */}
-            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover-lift">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/25">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Product Managers</h3>
-              <p className="text-slate-400 leading-relaxed">
-                "I never miss action items from meetings anymore. AI organizes them into tasks for me"
-              </p>
-            </div>
-
-            {/* Developer */}
-            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover-lift">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
-                <Code className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Developers</h3>
-              <p className="text-slate-400 leading-relaxed">
-                "I convert code review feedback into tasks instantly. Never miss a Slack notification"
-              </p>
-            </div>
-
-            {/* Marketer */}
-            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-              <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/25">
-                <Megaphone className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">Marketers</h3>
-              <p className="text-slate-400 leading-relaxed">
-                "I add Slack requests directly to my calendar. Managing deadlines has never been easier"
-              </p>
             </div>
           </div>
         </div>
@@ -537,6 +497,55 @@ export default function JottoLandingEN() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              Who uses <span className="text-gradient">Jotto</span>?
+            </h2>
+            <p className="text-xl text-slate-400">Let AI handle your daily organizing tasks</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* PM */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/25">
+                <Users className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Product Managers</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "I never miss action items from meetings anymore. AI organizes them into tasks for me"
+              </p>
+            </div>
+
+            {/* Developer */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
+                <Code className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Developers</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "I convert code review feedback into tasks instantly. Never miss a Slack notification"
+              </p>
+            </div>
+
+            {/* Marketer */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/25">
+                <Megaphone className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">Marketers</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "I add Slack requests directly to my calendar. Managing deadlines has never been easier"
+              </p>
             </div>
           </div>
         </div>

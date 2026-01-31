@@ -99,9 +99,9 @@ export default function JottoLanding() {
         </div>
 
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            {/* Left: Text Content */}
-            <div className="text-center lg:text-left">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Title - 모바일에서 첫번째 */}
+            <div className="order-1 lg:order-1 text-center lg:text-left w-full">
               <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/5 rounded-full border border-white/10 mb-8">
                 <Sparkles className="w-4 h-4 text-purple-400" />
                 <span className="text-sm text-slate-300">AI가 자동으로 정리해드려요</span>
@@ -114,7 +114,10 @@ export default function JottoLanding() {
                 <br />
                 <span className="text-gradient">알아서 할게요</span>
               </h1>
-              
+            </div>
+
+            {/* Description & CTA - 모바일에서 두번째 */}
+            <div className="order-2 lg:order-3 text-center lg:text-left w-full">
               <p className="text-xl text-slate-400 mb-10 max-w-xl mx-auto lg:mx-0 leading-relaxed">
                 Slack, Notion, mail, 웹사이트 어디서든
                 <br />
@@ -156,8 +159,8 @@ export default function JottoLanding() {
               <p className="text-sm text-slate-500 mt-6">macOS 12+ | Apple Silicon (M1/M2/M3/M4) | 무료</p>
             </div>
 
-            {/* Right: Hero Video */}
-            <div className="relative">
+            {/* Video - 모바일에서 세번째 */}
+            <div className="order-3 lg:order-2 lg:row-span-2 relative w-full">
               <div className="relative group">
                 {/* Glow effect */}
                 <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-40 group-hover:opacity-60 transition-opacity duration-500 animate-glow-pulse"></div>
@@ -187,9 +190,31 @@ export default function JottoLanding() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950"></div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Video */}
-            <div className="relative group">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Title + Description - 모바일에서 첫번째 */}
+            <div className="order-1 lg:order-2 w-full">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 rounded-full border border-blue-500/30 mb-6">
+                <CheckCircle2 className="w-4 h-4 text-blue-400" />
+                <span className="text-sm text-blue-300">스마트 할일 관리</span>
+              </div>
+              
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
+                업무 요청?
+                <br />
+                <span className="text-gradient">AI가 할일로 만들어드려요</span>
+              </h2>
+
+              <p className="text-xl text-slate-400 leading-relaxed">
+                Slack, Discord, 이메일 어디서든
+                <br />
+                드래그하면 AI가 맥락을 파악해
+                <br />
+                자동으로 할일 목록에 추가합니다
+              </p>
+            </div>
+
+            {/* Video - 모바일에서 두번째 */}
+            <div className="order-2 lg:order-1 lg:row-span-2 relative group w-full">
               <div className="absolute -inset-4 bg-gradient-to-r from-blue-500 to-cyan-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
               <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
                 <video 
@@ -204,27 +229,8 @@ export default function JottoLanding() {
               </div>
             </div>
 
-            {/* Text */}
-            <div>
-              <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-blue-500/10 rounded-full border border-blue-500/30 mb-6">
-                <CheckCircle2 className="w-4 h-4 text-blue-400" />
-                <span className="text-sm text-blue-300">스마트 할일 관리</span>
-              </div>
-              
-              <h2 className="text-4xl md:text-5xl font-bold mb-6 leading-tight">
-                업무 요청?
-                <br />
-                <span className="text-gradient">AI가 할일로 만들어드려요</span>
-              </h2>
-              
-              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
-                Slack, Discord, 이메일 어디서든
-                <br />
-                드래그하면 AI가 맥락을 파악해
-                <br />
-                자동으로 할일 목록에 추가합니다
-              </p>
-
+            {/* Features - 모바일에서 세번째 */}
+            <div className="order-3 lg:order-3 w-full">
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
                   <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-xl flex items-center justify-center">
@@ -256,9 +262,9 @@ export default function JottoLanding() {
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950 via-slate-900/50 to-slate-950"></div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            {/* Text */}
-            <div className="lg:order-1">
+          <div className="flex flex-col lg:grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            {/* Title + Description - 모바일에서 첫번째 */}
+            <div className="order-1 lg:order-1 w-full">
               <div className="inline-flex items-center gap-2 px-3 py-1.5 bg-purple-500/10 rounded-full border border-purple-500/30 mb-6">
                 <Mic className="w-4 h-4 text-purple-400" />
                 <span className="text-sm text-purple-300">미팅 AI</span>
@@ -269,13 +275,32 @@ export default function JottoLanding() {
                 <br />
                 <span className="text-gradient">정리는 AI가</span>
               </h2>
-              
-              <p className="text-xl text-slate-400 mb-8 leading-relaxed">
+
+              <p className="text-xl text-slate-400 leading-relaxed">
                 미팅을 녹음하면 AI가 자동으로 요약하고
                 <br />
                 후속 일정과 할일을 제안합니다
               </p>
+            </div>
 
+            {/* Video - 모바일에서 두번째 */}
+            <div className="order-2 lg:order-2 lg:row-span-2 relative group w-full">
+              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
+              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
+                <video 
+                  className="w-full rounded-xl shadow-2xl" 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline
+                >
+                  <source src="/meeting_jotto.mp4" type="video/mp4" />
+                </video>
+              </div>
+            </div>
+
+            {/* Features - 모바일에서 세번째 */}
+            <div className="order-3 lg:order-3 w-full">
               <div className="space-y-4">
                 <div className="flex items-center gap-4 p-4 bg-white/5 rounded-xl border border-white/10">
                   <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-pink-500 rounded-xl flex items-center justify-center">
@@ -307,71 +332,6 @@ export default function JottoLanding() {
                   </div>
                 </div>
               </div>
-            </div>
-
-            {/* Video */}
-            <div className="lg:order-2 relative group">
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 to-pink-500 rounded-3xl blur-2xl opacity-30 group-hover:opacity-50 transition-opacity duration-500"></div>
-              <div className="relative bg-slate-900/80 backdrop-blur-sm rounded-2xl p-3 border border-white/10">
-                <video 
-                  className="w-full rounded-xl shadow-2xl" 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline
-                >
-                  <source src="/meeting_jotto.mp4" type="video/mp4" />
-                </video>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Use Cases Section */}
-      <section className="relative py-32 px-6">
-        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
-        
-        <div className="container mx-auto max-w-6xl relative z-10">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">
-              이런 분들이 <span className="text-gradient">Jotto</span>를 사용합니다
-            </h2>
-            <p className="text-xl text-slate-400">매일 반복되는 정리 업무, AI에게 맡기세요</p>
-          </div>
-
-          <div className="grid md:grid-cols-3 gap-6">
-            {/* PM/기획자 */}
-            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover-lift">
-              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/25">
-                <Users className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">PM / 기획자</h3>
-              <p className="text-slate-400 leading-relaxed">
-                "회의 중 나온 액션 아이템을 놓치지 않아요. AI가 알아서 할일로 정리해줘요"
-              </p>
-            </div>
-
-            {/* 개발자 */}
-            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover-lift">
-              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
-                <Code className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">개발자</h3>
-              <p className="text-slate-400 leading-relaxed">
-                "코드리뷰 피드백을 바로 할일로 변환해요. 슬랙 알림도 놓치지 않아요"
-              </p>
-            </div>
-
-            {/* 마케터 */}
-            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover-lift">
-              <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/25">
-                <Megaphone className="w-7 h-7 text-white" />
-              </div>
-              <h3 className="text-xl font-bold mb-3 text-white">마케터</h3>
-              <p className="text-slate-400 leading-relaxed">
-                "슬랙에서 받은 요청을 캘린더로 바로 등록해요. 마감일 관리가 쉬워졌어요"
-              </p>
             </div>
           </div>
         </div>
@@ -537,6 +497,55 @@ export default function JottoLanding() {
                   </div>
                 </div>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Use Cases Section */}
+      <section className="relative py-32 px-6">
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950 to-slate-900"></div>
+        
+        <div className="container mx-auto max-w-6xl relative z-10">
+          <div className="text-center mb-16">
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              이런 분들이 <span className="text-gradient">Jotto</span>를 사용합니다
+            </h2>
+            <p className="text-xl text-slate-400">매일 반복되는 정리 업무, AI에게 맡기세요</p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {/* PM/기획자 */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-blue-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-blue-500 to-cyan-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-blue-500/25">
+                <Users className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">PM / 기획자</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "회의 중 나온 액션 아이템을 놓치지 않아요. AI가 알아서 할일로 정리해줘요"
+              </p>
+            </div>
+
+            {/* 개발자 */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-purple-500 to-violet-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-purple-500/25">
+                <Code className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">개발자</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "코드리뷰 피드백을 바로 할일로 변환해요. 슬랙 알림도 놓치지 않아요"
+              </p>
+            </div>
+
+            {/* 마케터 */}
+            <div className="group p-8 bg-gradient-to-b from-white/5 to-transparent rounded-2xl border border-white/10 hover:border-pink-500/50 transition-all duration-300 hover-lift">
+              <div className="w-14 h-14 bg-gradient-to-br from-pink-500 to-rose-500 rounded-2xl flex items-center justify-center mb-6 shadow-lg shadow-pink-500/25">
+                <Megaphone className="w-7 h-7 text-white" />
+              </div>
+              <h3 className="text-xl font-bold mb-3 text-white">마케터</h3>
+              <p className="text-slate-400 leading-relaxed">
+                "슬랙에서 받은 요청을 캘린더로 바로 등록해요. 마감일 관리가 쉬워졌어요"
+              </p>
             </div>
           </div>
         </div>
