@@ -6,18 +6,18 @@
     <description>Jotto macOS App Updates</description>
     <language>ko</language>
     <item>
-      <title>Version 3.2.3</title>
-      <description>Jotto 3.2.3 업데이트: 성능 개선 및 버그 수정</description>
-      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v3.2.3</sparkle:releaseNotesLink>
-      <pubDate>Mon, 02 Feb 2026 03:34:21 +0000</pubDate>
+      <title>Version 3.2.4</title>
+      <description>Jotto 3.2.4 업데이트: 성능 개선 및 버그 수정</description>
+      <sparkle:releaseNotesLink>https://github.com/bearjun05/Jotto-landing/releases/tag/v3.2.4</sparkle:releaseNotesLink>
+      <pubDate>Sun, 01 Feb 2026 04:44:08 +0000</pubDate>
       <enclosure
-        url="https://github.com/bearjun05/Jotto-landing/releases/download/v3.2.3/jotto.dmg"
-        sparkle:edSignature="kd4PWEJU9wfRtO3necIm/8IQ4DJYZqnHyhAk1UljGhUGodBR58QcCkiUQcTTRVxcnyRkQBcs6jbH8/I/EeJdBQ=="
+        url="https://github.com/bearjun05/Jotto-landing/releases/download/v3.2.4/jotto.dmg"
+        sparkle:edSignature="SK2oSTlRPlxubppLvCK1inUF/8mswtA/m/QuIrm8nL3FlMoBYLJE+n0Vi/8y06sQLvSB4Yh0SRBxNKCaXsmOCQ=="
         sparkle:minimumSystemVersion="13.0"
-        length="7566810"
+        length="8309644"
         type="application/octet-stream"/>
-      <sparkle:version>323</sparkle:version>
-      <sparkle:shortVersionString>3.2.3</sparkle:shortVersionString>
+      <sparkle:version>317</sparkle:version>
+      <sparkle:shortVersionString>3.2.4</sparkle:shortVersionString>
     </item>
   </channel>
 </rss>
