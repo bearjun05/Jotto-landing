@@ -275,7 +275,7 @@ export default function PricingPage() {
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. All rights reserved. • Contact: contact@jotto.in •
+              © 2026 Jotto. All rights reserved. • Contact: contact@jotto.in •
               <a href="/en/privacy" className="hover:text-slate-700 ml-1">
                 Privacy Policy
               </a>

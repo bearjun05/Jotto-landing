@@ -33,9 +33,9 @@ export default function PrivacyPolicy() {
 
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-slate-600 mb-8">
-                <strong>시행일:</strong> 2025년 8월 6일
+                <strong>시행일:</strong> 2026년 2월 20일
                 <br />
-                <strong>최종 업데이트:</strong> 2025년 8월 6일
+                <strong>최종 업데이트:</strong> 2026년 2월 20일
               </p>
 
               <p className="text-slate-700 leading-relaxed mb-8">
@@ -169,7 +169,7 @@ export default function PrivacyPolicy() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
-            <p className="text-sm text-slate-500">© 2025 Jotto. All rights reserved.</p>
+            <p className="text-sm text-slate-500">© 2026 Jotto. All rights reserved.</p>
           </div>
         </div>
       </footer>

@@ -608,7 +608,7 @@ export default function JottoLandingEN() {
           </div>
           <div className="mt-8 pt-8 border-t border-white/10 text-center">
             <p className="text-sm text-slate-500">
-              © 2025 Jotto. All rights reserved. • Contact: contact@jotto.in •{" "}
+              © 2026 Jotto. All rights reserved. • Contact: contact@jotto.in •{" "}
               <a href="/en/privacy" className="hover:text-white transition-colors">
                 Privacy Policy
               </a>

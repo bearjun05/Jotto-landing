@@ -33,9 +33,9 @@ export default function PrivacyPolicyEN() {
 
             <div className="prose prose-slate max-w-none">
               <p className="text-lg text-slate-600 mb-8">
-                <strong>Effective Date:</strong> August 6, 2025
+                <strong>Effective Date:</strong> February 20, 2026
                 <br />
-                <strong>Last Updated:</strong> August 6, 2025
+                <strong>Last Updated:</strong> February 20, 2026
               </p>
 
               <p className="text-slate-700 leading-relaxed mb-8">
@@ -174,7 +174,7 @@ export default function PrivacyPolicyEN() {
             </div>
           </div>
           <div className="mt-8 pt-8 border-t border-slate-200 text-center">
-            <p className="text-sm text-slate-500">© 2025 Jotto. All rights reserved.</p>
+            <p className="text-sm text-slate-500">© 2026 Jotto. All rights reserved.</p>
           </div>
         </div>
       </footer>
